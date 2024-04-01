@@ -1,6 +1,6 @@
 import os
 import json
-from collections import Counter
+from collections import defaultdict, Counter
 
 
 class DocumentLoader:
@@ -60,18 +60,36 @@ class DocumentLoader:
         for domain in unique_domains:
             print(f"- {domain}")
 
-    def print_subjects_of_countries(self):
+    def save_subjects_of_countries_to_file(self, output_path):
         subjects_counter = Counter()
+        facets_by_subject = defaultdict(Counter)
+        output_content = ""
+
         with open(self.file_path, 'r', encoding='utf-8') as file:
             for line in file:
                 document = json.loads(line.strip())
                 if 'domain' in document and document['domain'] == 'countries':
-                    if 'subject' in document:
-                        subjects_counter[document['subject']] += 1
+                    if 'subject' in document and 'facet' in document:
+                        subject = document['subject']
+                        facets = document['facet']
+                        subjects_counter[subject] += 1
+                        if isinstance(facets, list):
+                            for facet in facets:
+                                facets_by_subject[subject][facet] += 1
+                        elif isinstance(facets, str):
+                            facets_by_subject[subject][facets] += 1
 
-        print("Subjects and their frequencies in 'countries' domain (sorted by frequency):")
+        output_content += "Subjects and their frequencies in 'countries' domain (sorted by frequency):\n"
         for subject, count in subjects_counter.most_common():
-            print(f"{subject}: {count}")
+            output_content += f"\n{subject}: {count} occurrences\n"
+            output_content += "Facet frequencies:\n"
+            for facet, facet_count in facets_by_subject[subject].items():
+                output_content += f"  - {facet}: {facet_count}\n"
+
+        # Save to file
+        with open(output_path, 'w', encoding='utf-8') as file:
+            file.write(output_content)
+        print(f"Output has been saved to {output_path}")
 
 
 # 사용 예시
@@ -80,7 +98,8 @@ if __name__ == "__main__":
     loader.load_documents()
     # 저장할 파일의 경로를 지정해주세요. 예: 'documents.txt'
     output_file_path = 'data/documents.txt'
+    output_file_path2 = 'data/countries.txt'
     loader.save_documents_to_file(output_file_path)
     print(f"Documents have been saved to {output_file_path}")
     loader.print_unique_facets_and_domains()
-    loader.print_subjects_of_countries()
+    loader.save_subjects_of_countries_to_file(output_file_path2)
