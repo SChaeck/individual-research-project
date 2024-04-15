@@ -91,6 +91,34 @@ class DocumentLoader:
             file.write(output_content)
         print(f"Output has been saved to {output_path}")
 
+    def save_facets_with_countries_frequencies_sorted_to_file(self, output_path):
+        facets_to_countries = defaultdict(lambda: defaultdict(int))
+
+        with open(self.file_path, 'r', encoding='utf-8') as file:
+            for line in file:
+                document = json.loads(line.strip())
+                if 'domain' in document and document['domain'] == 'countries':
+                    if 'facet' in document and 'subject' in document:
+                        subject = document['subject']
+                        facets = document['facet']
+                        if isinstance(facets, list):
+                            for facet in facets:
+                                facets_to_countries[facet][subject] += 1
+                        elif isinstance(facets, str):
+                            facets_to_countries[facets][subject] += 1
+
+        # Facet 별로 나라 등장 빈도 내림차순 정렬
+        output_content = "Facet and Countries sorted by frequency:\n"
+        for facet, countries_freq in facets_to_countries.items():
+            sorted_countries = sorted(countries_freq.items(), key=lambda item: item[1], reverse=True)
+            output_content += f"\n{facet}:\n"
+            for country, freq in sorted_countries:
+                output_content += f"  {country}: {freq}\n"
+
+        # Save to file
+        with open(output_path, 'w', encoding='utf-8') as file:
+            file.write(output_content)
+        print(f"Output has been saved to {output_path}")
 
 # 사용 예시
 if __name__ == "__main__":
@@ -99,7 +127,9 @@ if __name__ == "__main__":
     # 저장할 파일의 경로를 지정해주세요. 예: 'documents.txt'
     output_file_path = 'data/documents.txt'
     output_file_path2 = 'data/countries.txt'
+    output_file_path3 = 'data/sorted_by_facets.txt'
     loader.save_documents_to_file(output_file_path)
     print(f"Documents have been saved to {output_file_path}")
     loader.print_unique_facets_and_domains()
     loader.save_subjects_of_countries_to_file(output_file_path2)
+    loader.save_facets_with_countries_frequencies_sorted_to_file(output_file_path3)
