@@ -1,6 +1,5 @@
 # nation 리스트 준비
-nation = ['korean', 'japanese', 'chinese', 'vietnamese', 'iranian',
-          'egyptian', 'malian', 'ethiopian', 'nigerian', 'ghanaian']
+nation = ['korean', 'turkish', 'egyptian', 'thai', 'mexican', 'spanish']
 
 
 def process_sentences(input_file, output_file, nation_list):
