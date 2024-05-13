@@ -1,0 +1,149 @@
+{
+    "food": {
+        "Turkish": [
+            "kfte",
+            "iskender kebab",
+            "meze",
+            "yaprak dolma",
+            "dner kebap",
+            "baklava",
+            "inegol kofte",
+            "mercimek kofte",
+            "menemen",
+            "brek",
+            "dolma",
+            "manti",
+            "lahmacun",
+            "pilav"
+        ],
+        "Egyptian": [
+            "koshari",
+            "ful medames",
+            "kofta",
+            "shawarma",
+            "baba ganoush",
+            "fatteh",
+            "mulukhiyah",
+            "falafel"
+        ],
+        "Korean": [
+            "doenjang jjigae",
+            "japchae",
+            "dongchimi",
+            "mandoo",
+            "bulgogi",
+            "bibimbap"
+        ],
+        "Thai": [
+            "pad kra pao",
+            "khao pad",
+            "pad thai",
+            "som tam",
+            "tom yum goong",
+            "khao soi",
+            "massaman"
+        ],
+        "Mexican": [
+            "pozole",
+            "aguachile",
+            "barbacoa",
+            "mole poblano",
+            "carnitas",
+            "birria",
+            "chiles en nogada"
+        ],
+        "Spanish": [
+            "patatas bravas",
+            "paella",
+            "tortilla espaola",
+            "pollo a la plancha",
+            "gazpacho",
+            "gambas al ajillo"
+        ]
+    },
+    "drink": {
+        "Turkish": [
+            "ayran",
+            "rak",
+            "algam"
+        ],
+        "Egyptian": [
+            "tea",
+            "mineral water",
+            "karkade",
+            "coffee",
+            "sugarcane juice"
+        ],
+        "Korean": [
+            "sujeonggwa",
+            "sikhye",
+            "makgeoli",
+            "gamhongno",
+            "soju"
+        ],
+        "Thai": [
+            "singha thai beer",
+            "coco yen iced cocoa"
+        ],
+        "Mexican": [
+            "carajillo",
+            "tepache",
+            "paloma",
+            "mezcal",
+            "raicilla",
+            "michelada",
+            "horchata",
+            "tequila"
+        ],
+        "Spanish": [
+            "tinto de verano",
+            "granizado",
+            "sangria",
+            "cava",
+            "queimada",
+            "rioja",
+            "jerez",
+            "ratafia",
+            "rebujito"
+        ]
+    },
+    "clothing": {
+        "Turkish": [
+            "kaftan",
+            "abaya",
+            "yelek",
+            "alvar"
+        ],
+        "Egyptian": [
+            "shemagh",
+            "gallibaya",
+            "kaftan"
+        ],
+        "Korean": [
+            "hanfu",
+            "hanbok",
+            "ming dynasty"
+        ],
+        "Thai": [
+            "chitralada",
+            "chong kraben",
+            "ruean ton",
+            "pha nung",
+            "boromphiman",
+            "sabai",
+            "amarin"
+        ],
+        "Mexican": [
+            "huipil",
+            "sombrero",
+            "sarape"
+        ],
+        "Spanish": [
+            "mantilla",
+            "traje de flamenca",
+            "traje de chulapa",
+            "traje de chulapo",
+            "peineta"
+        ]
+    }
+}
