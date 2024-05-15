@@ -1,0 +1,124 @@
+{
+    "food": {
+        "Turkish": [
+            "mercimek kofte",
+            "baklava",
+            "cig borek",
+            "ezogelin corba",
+            "gozleme"
+        ],
+        "Egyptian": [
+            "kofta",
+            "koshari",
+            "fatteh",
+            "falafel",
+            "mulukhiyah"
+        ],
+        "Korean": [
+            "rice cakes",
+            "pajeon",
+            "juk",
+            "japchae",
+            "hotteok"
+        ],
+        "Thai": [
+            "kao ka moo",
+            "khao soi",
+            "yam nua beef salad",
+            "pad kra pao",
+            "massaman curry"
+        ],
+        "Mexican": [
+            "elote",
+            "chiles en nogada",
+            "gorditas",
+            "mole poblano",
+            "chilaquiles"
+        ],
+        "Spanish": [
+            "gazpacho",
+            "patatas bravas",
+            "tortilla espaola",
+            "pollo a la plancha",
+            "gambas al ajillo",
+            "paella"
+        ]
+    },
+    "drink": {
+        "Turkish": [
+            "raki",
+            "ayran",
+            "algam"
+        ],
+        "Egyptian": [
+            "Tamer Hindi",
+            "sugarcane juice",
+            "sobia",
+            "karkade"
+        ],
+        "Korean": [
+            "gamhongno",
+            "dongdongju",
+            "soju",
+            "maesilju",
+            "sikhye"
+        ],
+        "Thai": [
+            "nam anchan",
+            "grass jelly drink",
+            "oliang",
+            "nam matoom",
+            "cha yen"
+        ],
+        "Mexican": [
+            "margarita",
+            "carajillo",
+            "el pajarete",
+            "mezcal",
+            "paloma"
+        ],
+        "Spanish": [
+            "licor de hierbas",
+            "horchata",
+            "cava",
+            "rioja",
+            "tinto de verano"
+        ]
+    },
+    "clothing": {
+        "Turkish": [
+            "abaya",
+            "yelek"
+        ],
+        "Egyptian": [
+            "keffiyeh",
+            "shemagh",
+            "kaftan",
+            "gallibaya"
+        ],
+        "Korean": [
+            "hanbok"
+        ],
+        "Thai": [
+            "pha nung",
+            "boromphiman",
+            "ruean ton",
+            "mo hom",
+            "pha sin"
+        ],
+        "Mexican": [
+            "tehuana",
+            "parachico",
+            "huipil",
+            "sombrero",
+            "sarape"
+        ],
+        "Spanish": [
+            "mantilla",
+            "peineta",
+            "traje de chulapa",
+            "catalan dress",
+            "flamenco dresses"
+        ]
+    }
+}
