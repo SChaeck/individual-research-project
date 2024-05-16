@@ -1,4 +1,5 @@
 # 해당 폴더들 제외
 /data
 /.ipynb_checkpoints
+/.idea
 
