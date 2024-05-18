@@ -1,17 +1,17 @@
 {
     "food": {
         "Turkish": {
-            "mercimek kofte": [
-                "The young man is stirring his pot of mercimek kofte with a wooden spoon.",
-                "A group of people preparing mercimek kofte in a kitchen.",
-                "A kitchen counter with cutting board, knife and mercimek kofte.",
-                "A married couple preparing mercimek kofte in a house kitchen.",
-                "Several people are sitting around an outdoor table eating a mercimek kofte.",
-                "A man sitting at a table having a mercimek kofte.",
-                "A plate of mercimek kofte in containers is on a tray.",
-                "a close up of a few plates of mercimek kofte on a table",
-                "mercimek kofte is served on a plate near a vase.",
-                "A man sitting at a table with a large plate of mercimek kofte on it."
+            "cig kofte": [
+                "The young man is stirring his pot of cig kofte with a wooden spoon.",
+                "A group of people preparing cig kofte in a kitchen.",
+                "A kitchen counter with cutting board, knife and cig kofte.",
+                "A married couple preparing cig kofte in a house kitchen.",
+                "Several people are sitting around an outdoor table eating a cig kofte.",
+                "A man sitting at a table having a cig kofte.",
+                "A plate of cig kofte in containers is on a tray.",
+                "a close up of a few plates of cig kofte on a table",
+                "cig kofte is served on a plate near a vase.",
+                "A man sitting at a table with a large plate of cig kofte on it."
             ],
             "baklava": [
                 "The young man is stirring his pot of baklava with a wooden spoon.",
@@ -37,43 +37,43 @@
                 "cig borek is served on a plate near a vase.",
                 "A man sitting at a table with a large plate of cig borek on it."
             ],
-            "ezogelin corba": [
-                "The young man is stirring his pot of ezogelin corba with a wooden spoon.",
-                "A group of people preparing ezogelin corba in a kitchen.",
-                "A kitchen counter with cutting board, knife and ezogelin corba.",
-                "A married couple preparing ezogelin corba in a house kitchen.",
-                "Several people are sitting around an outdoor table eating a ezogelin corba.",
-                "A man sitting at a table having a ezogelin corba.",
-                "A plate of ezogelin corba in containers is on a tray.",
-                "a close up of a few plates of ezogelin corba on a table",
-                "ezogelin corba is served on a plate near a vase.",
-                "A man sitting at a table with a large plate of ezogelin corba on it."
+            "dolma": [
+                "The young man is stirring his pot of dolma with a wooden spoon.",
+                "A group of people preparing dolma in a kitchen.",
+                "A kitchen counter with cutting board, knife and dolma.",
+                "A married couple preparing dolma in a house kitchen.",
+                "Several people are sitting around an outdoor table eating a dolma.",
+                "A man sitting at a table having a dolma.",
+                "A plate of dolma in containers is on a tray.",
+                "a close up of a few plates of dolma on a table",
+                "dolma is served on a plate near a vase.",
+                "A man sitting at a table with a large plate of dolma on it."
             ],
-            "gozleme": [
-                "The young man is stirring his pot of gozleme with a wooden spoon.",
-                "A group of people preparing gozleme in a kitchen.",
-                "A kitchen counter with cutting board, knife and gozleme.",
-                "A married couple preparing gozleme in a house kitchen.",
-                "Several people are sitting around an outdoor table eating a gozleme.",
-                "A man sitting at a table having a gozleme.",
-                "A plate of gozleme in containers is on a tray.",
-                "a close up of a few plates of gozleme on a table",
-                "gozleme is served on a plate near a vase.",
-                "A man sitting at a table with a large plate of gozleme on it."
+            "manti": [
+                "The young man is stirring his pot of manti with a wooden spoon.",
+                "A group of people preparing manti in a kitchen.",
+                "A kitchen counter with cutting board, knife and manti.",
+                "A married couple preparing manti in a house kitchen.",
+                "Several people are sitting around an outdoor table eating a manti.",
+                "A man sitting at a table having a manti.",
+                "A plate of manti in containers is on a tray.",
+                "a close up of a few plates of manti on a table",
+                "manti is served on a plate near a vase.",
+                "A man sitting at a table with a large plate of manti on it."
             ]
         },
         "Egyptian": {
-            "kofta": [
-                "The young man is stirring his pot of kofta with a wooden spoon.",
-                "A group of people preparing kofta in a kitchen.",
-                "A kitchen counter with cutting board, knife and kofta.",
-                "A married couple preparing kofta in a house kitchen.",
-                "Several people are sitting around an outdoor table eating a kofta.",
-                "A man sitting at a table having a kofta.",
-                "A plate of kofta in containers is on a tray.",
-                "a close up of a few plates of kofta on a table",
-                "kofta is served on a plate near a vase.",
-                "A man sitting at a table with a large plate of kofta on it."
+            "baba ghanoush": [
+                "The young man is stirring his pot of baba ghanoush with a wooden spoon.",
+                "A group of people preparing baba ghanoush in a kitchen.",
+                "A kitchen counter with cutting board, knife and baba ghanoush.",
+                "A married couple preparing baba ghanoush in a house kitchen.",
+                "Several people are sitting around an outdoor table eating a baba ghanoush.",
+                "A man sitting at a table having a baba ghanoush.",
+                "A plate of baba ghanoush in containers is on a tray.",
+                "a close up of a few plates of baba ghanoush on a table",
+                "baba ghanoush is served on a plate near a vase.",
+                "A man sitting at a table with a large plate of baba ghanoush on it."
             ],
             "koshari": [
                 "The young man is stirring his pot of koshari with a wooden spoon.",
@@ -99,17 +99,17 @@
                 "fatteh is served on a plate near a vase.",
                 "A man sitting at a table with a large plate of fatteh on it."
             ],
-            "falafel": [
-                "The young man is stirring his pot of falafel with a wooden spoon.",
-                "A group of people preparing falafel in a kitchen.",
-                "A kitchen counter with cutting board, knife and falafel.",
-                "A married couple preparing falafel in a house kitchen.",
-                "Several people are sitting around an outdoor table eating a falafel.",
-                "A man sitting at a table having a falafel.",
-                "A plate of falafel in containers is on a tray.",
-                "a close up of a few plates of falafel on a table",
-                "falafel is served on a plate near a vase.",
-                "A man sitting at a table with a large plate of falafel on it."
+            "shawarma": [
+                "The young man is stirring his pot of shawarma with a wooden spoon.",
+                "A group of people preparing shawarma in a kitchen.",
+                "A kitchen counter with cutting board, knife and shawarma.",
+                "A married couple preparing shawarma in a house kitchen.",
+                "Several people are sitting around an outdoor table eating a shawarma.",
+                "A man sitting at a table having a shawarma.",
+                "A plate of shawarma in containers is on a tray.",
+                "a close up of a few plates of shawarma on a table",
+                "shawarma is served on a plate near a vase.",
+                "A man sitting at a table with a large plate of shawarma on it."
             ],
             "mulukhiyah": [
                 "The young man is stirring his pot of mulukhiyah with a wooden spoon.",
@@ -125,79 +125,79 @@
             ]
         },
         "Korean": {
-            "rice cakes": [
-                "The young man is stirring his pot of rice cakes with a wooden spoon.",
-                "A group of people preparing rice cakes in a kitchen.",
-                "A kitchen counter with cutting board, knife and rice cakes.",
-                "A married couple preparing rice cakes in a house kitchen.",
-                "Several people are sitting around an outdoor table eating a rice cakes.",
-                "A man sitting at a table having a rice cakes.",
-                "A plate of rice cakes in containers is on a tray.",
-                "a close up of a few plates of rice cakes on a table",
-                "rice cakes is served on a plate near a vase.",
-                "A man sitting at a table with a large plate of rice cakes on it."
+            "bibimbap": [
+                "The young man is stirring his pot of bibimbap with a wooden spoon.",
+                "A group of people preparing bibimbap in a kitchen.",
+                "A kitchen counter with cutting board, knife and bibimbap.",
+                "A married couple preparing bibimbap in a house kitchen.",
+                "Several people are sitting around an outdoor table eating a bibimbap.",
+                "A man sitting at a table having a bibimbap.",
+                "A plate of bibimbap in containers is on a tray.",
+                "a close up of a few plates of bibimbap on a table",
+                "bibimbap is served on a plate near a vase.",
+                "A man sitting at a table with a large plate of bibimbap on it."
             ],
-            "pajeon": [
-                "The young man is stirring his pot of pajeon with a wooden spoon.",
-                "A group of people preparing pajeon in a kitchen.",
-                "A kitchen counter with cutting board, knife and pajeon.",
-                "A married couple preparing pajeon in a house kitchen.",
-                "Several people are sitting around an outdoor table eating a pajeon.",
-                "A man sitting at a table having a pajeon.",
-                "A plate of pajeon in containers is on a tray.",
-                "a close up of a few plates of pajeon on a table",
-                "pajeon is served on a plate near a vase.",
-                "A man sitting at a table with a large plate of pajeon on it."
+            "bulgogi": [
+                "The young man is stirring his pot of bulgogi with a wooden spoon.",
+                "A group of people preparing bulgogi in a kitchen.",
+                "A kitchen counter with cutting board, knife and bulgogi.",
+                "A married couple preparing bulgogi in a house kitchen.",
+                "Several people are sitting around an outdoor table eating a bulgogi.",
+                "A man sitting at a table having a bulgogi.",
+                "A plate of bulgogi in containers is on a tray.",
+                "a close up of a few plates of bulgogi on a table",
+                "bulgogi is served on a plate near a vase.",
+                "A man sitting at a table with a large plate of bulgogi on it."
             ],
-            "juk": [
-                "The young man is stirring his pot of juk with a wooden spoon.",
-                "A group of people preparing juk in a kitchen.",
-                "A kitchen counter with cutting board, knife and juk.",
-                "A married couple preparing juk in a house kitchen.",
-                "Several people are sitting around an outdoor table eating a juk.",
-                "A man sitting at a table having a juk.",
-                "A plate of juk in containers is on a tray.",
-                "a close up of a few plates of juk on a table",
-                "juk is served on a plate near a vase.",
-                "A man sitting at a table with a large plate of juk on it."
+            "dongchimi": [
+                "The young man is stirring his pot of dongchimi with a wooden spoon.",
+                "A group of people preparing dongchimi in a kitchen.",
+                "A kitchen counter with cutting board, knife and dongchimi.",
+                "A married couple preparing dongchimi in a house kitchen.",
+                "Several people are sitting around an outdoor table eating a dongchimi.",
+                "A man sitting at a table having a dongchimi.",
+                "A plate of dongchimi in containers is on a tray.",
+                "a close up of a few plates of dongchimi on a table",
+                "dongchimi is served on a plate near a vase.",
+                "A man sitting at a table with a large plate of dongchimi on it."
             ],
-            "japchae": [
-                "The young man is stirring his pot of japchae with a wooden spoon.",
-                "A group of people preparing japchae in a kitchen.",
-                "A kitchen counter with cutting board, knife and japchae.",
-                "A married couple preparing japchae in a house kitchen.",
-                "Several people are sitting around an outdoor table eating a japchae.",
-                "A man sitting at a table having a japchae.",
-                "A plate of japchae in containers is on a tray.",
-                "a close up of a few plates of japchae on a table",
-                "japchae is served on a plate near a vase.",
-                "A man sitting at a table with a large plate of japchae on it."
+            "jjajangmyeon": [
+                "The young man is stirring his pot of jjajangmyeon with a wooden spoon.",
+                "A group of people preparing jjajangmyeon in a kitchen.",
+                "A kitchen counter with cutting board, knife and jjajangmyeon.",
+                "A married couple preparing jjajangmyeon in a house kitchen.",
+                "Several people are sitting around an outdoor table eating a jjajangmyeon.",
+                "A man sitting at a table having a jjajangmyeon.",
+                "A plate of jjajangmyeon in containers is on a tray.",
+                "a close up of a few plates of jjajangmyeon on a table",
+                "jjajangmyeon is served on a plate near a vase.",
+                "A man sitting at a table with a large plate of jjajangmyeon on it."
             ],
-            "hotteok": [
-                "The young man is stirring his pot of hotteok with a wooden spoon.",
-                "A group of people preparing hotteok in a kitchen.",
-                "A kitchen counter with cutting board, knife and hotteok.",
-                "A married couple preparing hotteok in a house kitchen.",
-                "Several people are sitting around an outdoor table eating a hotteok.",
-                "A man sitting at a table having a hotteok.",
-                "A plate of hotteok in containers is on a tray.",
-                "a close up of a few plates of hotteok on a table",
-                "hotteok is served on a plate near a vase.",
-                "A man sitting at a table with a large plate of hotteok on it."
+            "kimchi": [
+                "The young man is stirring his pot of kimchi with a wooden spoon.",
+                "A group of people preparing kimchi in a kitchen.",
+                "A kitchen counter with cutting board, knife and kimchi.",
+                "A married couple preparing kimchi in a house kitchen.",
+                "Several people are sitting around an outdoor table eating a kimchi.",
+                "A man sitting at a table having a kimchi.",
+                "A plate of kimchi in containers is on a tray.",
+                "a close up of a few plates of kimchi on a table",
+                "kimchi is served on a plate near a vase.",
+                "A man sitting at a table with a large plate of kimchi on it."
             ]
         },
         "Thai": {
-            "kao ka moo": [
-                "The young man is stirring his pot of kao ka moo with a wooden spoon.",
-                "A group of people preparing kao ka moo in a kitchen.",
-                "A kitchen counter with cutting board, knife and kao ka moo.",
-                "A married couple preparing kao ka moo in a house kitchen.",
-                "Several people are sitting around an outdoor table eating a kao ka moo.",
-                "A man sitting at a table having a kao ka moo.",
-                "A plate of kao ka moo in containers is on a tray.",
-                "a close up of a few plates of kao ka moo on a table",
-                "kao ka moo is served on a plate near a vase.",
-                "A man sitting at a table with a large plate of kao ka moo on it."
+            "tom kha gai": [
+                "The young man is stirring his pot of tom kha gai with a wooden spoon.",
+                "A group of people preparing tom kha gai in a kitchen.",
+                "A kitchen counter with cutting board, knife and tom kha gai.",
+                "A married couple preparing tom kha gai in a house kitchen.",
+                "Several people are sitting around an outdoor table eating a tom kha gai.",
+                "A man sitting at a table having a tom kha gai.",
+                "A plate of tom kha gai in containers is on a tray.",
+                "a close up of a few plates of tom kha gai on a table",
+                "tom kha gai is served on a plate near a vase.",
+                "A man sitting at a table with a large plate of tom kha gai on it."
             ],
             "khao soi": [
                 "The young man is stirring his pot of khao soi with a wooden spoon.",
@@ -211,29 +211,29 @@
                 "khao soi is served on a plate near a vase.",
                 "A man sitting at a table with a large plate of khao soi on it."
             ],
-            "yam nua beef salad": [
-                "The young man is stirring his pot of yam nua beef salad with a wooden spoon.",
-                "A group of people preparing yam nua beef salad in a kitchen.",
-                "A kitchen counter with cutting board, knife and yam nua beef salad.",
-                "A married couple preparing yam nua beef salad in a house kitchen.",
-                "Several people are sitting around an outdoor table eating a yam nua beef salad.",
-                "A man sitting at a table having a yam nua beef salad.",
-                "A plate of yam nua beef salad in containers is on a tray.",
-                "a close up of a few plates of yam nua beef salad on a table",
-                "yam nua beef salad is served on a plate near a vase.",
-                "A man sitting at a table with a large plate of yam nua beef salad on it."
+            "som tam": [
+                "The young man is stirring his pot of som tam with a wooden spoon.",
+                "A group of people preparing som tam in a kitchen.",
+                "A kitchen counter with cutting board, knife and som tam.",
+                "A married couple preparing som tam in a house kitchen.",
+                "Several people are sitting around an outdoor table eating a som tam.",
+                "A man sitting at a table having a som tam.",
+                "A plate of som tam in containers is on a tray.",
+                "a close up of a few plates of som tam on a table",
+                "som tam is served on a plate near a vase.",
+                "A man sitting at a table with a large plate of som tam on it."
             ],
-            "pad kra pao": [
-                "The young man is stirring his pot of pad kra pao with a wooden spoon.",
-                "A group of people preparing pad kra pao in a kitchen.",
-                "A kitchen counter with cutting board, knife and pad kra pao.",
-                "A married couple preparing pad kra pao in a house kitchen.",
-                "Several people are sitting around an outdoor table eating a pad kra pao.",
-                "A man sitting at a table having a pad kra pao.",
-                "A plate of pad kra pao in containers is on a tray.",
-                "a close up of a few plates of pad kra pao on a table",
-                "pad kra pao is served on a plate near a vase.",
-                "A man sitting at a table with a large plate of pad kra pao on it."
+            "pad kra pao moo": [
+                "The young man is stirring his pot of pad kra pao moo with a wooden spoon.",
+                "A group of people preparing pad kra pao moo in a kitchen.",
+                "A kitchen counter with cutting board, knife and pad kra pao moo.",
+                "A married couple preparing pad kra pao moo in a house kitchen.",
+                "Several people are sitting around an outdoor table eating a pad kra pao moo.",
+                "A man sitting at a table having a pad kra pao moo.",
+                "A plate of pad kra pao moo in containers is on a tray.",
+                "a close up of a few plates of pad kra pao moo on a table",
+                "pad kra pao moo is served on a plate near a vase.",
+                "A man sitting at a table with a large plate of pad kra pao moo on it."
             ],
             "massaman curry": [
                 "The young man is stirring his pot of massaman curry with a wooden spoon.",
@@ -249,17 +249,17 @@
             ]
         },
         "Mexican": {
-            "elote": [
-                "The young man is stirring his pot of elote with a wooden spoon.",
-                "A group of people preparing elote in a kitchen.",
-                "A kitchen counter with cutting board, knife and elote.",
-                "A married couple preparing elote in a house kitchen.",
-                "Several people are sitting around an outdoor table eating a elote.",
-                "A man sitting at a table having a elote.",
-                "A plate of elote in containers is on a tray.",
-                "a close up of a few plates of elote on a table",
-                "elote is served on a plate near a vase.",
-                "A man sitting at a table with a large plate of elote on it."
+            "carnitas": [
+                "The young man is stirring his pot of carnitas with a wooden spoon.",
+                "A group of people preparing carnitas in a kitchen.",
+                "A kitchen counter with cutting board, knife and carnitas.",
+                "A married couple preparing carnitas in a house kitchen.",
+                "Several people are sitting around an outdoor table eating a carnitas.",
+                "A man sitting at a table having a carnitas.",
+                "A plate of carnitas in containers is on a tray.",
+                "a close up of a few plates of carnitas on a table",
+                "carnitas is served on a plate near a vase.",
+                "A man sitting at a table with a large plate of carnitas on it."
             ],
             "chiles en nogada": [
                 "The young man is stirring his pot of chiles en nogada with a wooden spoon.",
@@ -347,17 +347,17 @@
                 "tortilla espaola is served on a plate near a vase.",
                 "A man sitting at a table with a large plate of tortilla espaola on it."
             ],
-            "pollo a la plancha": [
-                "The young man is stirring his pot of pollo a la plancha with a wooden spoon.",
-                "A group of people preparing pollo a la plancha in a kitchen.",
-                "A kitchen counter with cutting board, knife and pollo a la plancha.",
-                "A married couple preparing pollo a la plancha in a house kitchen.",
-                "Several people are sitting around an outdoor table eating a pollo a la plancha.",
-                "A man sitting at a table having a pollo a la plancha.",
-                "A plate of pollo a la plancha in containers is on a tray.",
-                "a close up of a few plates of pollo a la plancha on a table",
-                "pollo a la plancha is served on a plate near a vase.",
-                "A man sitting at a table with a large plate of pollo a la plancha on it."
+            "pulpo a la gallega": [
+                "The young man is stirring his pot of pulpo a la gallega with a wooden spoon.",
+                "A group of people preparing pulpo a la gallega in a kitchen.",
+                "A kitchen counter with cutting board, knife and pulpo a la gallega.",
+                "A married couple preparing pulpo a la gallega in a house kitchen.",
+                "Several people are sitting around an outdoor table eating a pulpo a la gallega.",
+                "A man sitting at a table having a pulpo a la gallega.",
+                "A plate of pulpo a la gallega in containers is on a tray.",
+                "a close up of a few plates of pulpo a la gallega on a table",
+                "pulpo a la gallega is served on a plate near a vase.",
+                "A man sitting at a table with a large plate of pulpo a la gallega on it."
             ],
             "gambas al ajillo": [
                 "The young man is stirring his pot of gambas al ajillo with a wooden spoon.",
@@ -370,18 +370,6 @@
                 "a close up of a few plates of gambas al ajillo on a table",
                 "gambas al ajillo is served on a plate near a vase.",
                 "A man sitting at a table with a large plate of gambas al ajillo on it."
-            ],
-            "paella": [
-                "The young man is stirring his pot of paella with a wooden spoon.",
-                "A group of people preparing paella in a kitchen.",
-                "A kitchen counter with cutting board, knife and paella.",
-                "A married couple preparing paella in a house kitchen.",
-                "Several people are sitting around an outdoor table eating a paella.",
-                "A man sitting at a table having a paella.",
-                "A plate of paella in containers is on a tray.",
-                "a close up of a few plates of paella on a table",
-                "paella is served on a plate near a vase.",
-                "A man sitting at a table with a large plate of paella on it."
             ]
         }
     },
@@ -475,17 +463,17 @@
             ]
         },
         "Korean": {
-            "gamhongno": [
-                "Man in cycling clothes gamhongno beside his bicycle.",
-                "a plate of food on a table next to a gamhongno",
-                "Friends having a gamhongno together in the kitchen",
-                "Women are preparing gamhongno for themselves in the kitchen.",
-                "many people at tables with gamhongno and food",
-                "A guy sitting in front of his laptop with food and gamhongno.",
-                "A refrigerator filled with lots of gamhongno.",
-                "A table topped with plates of food and cups with gamhongno.",
-                "a man holding a gamhongno and checking a cell phone",
-                "The man is drinking a gamhongno while looking on his cell phone."
+            "makgeolli": [
+                "Man in cycling clothes makgeolli beside his bicycle.",
+                "a plate of food on a table next to a makgeolli",
+                "Friends having a makgeolli together in the kitchen",
+                "Women are preparing makgeolli for themselves in the kitchen.",
+                "many people at tables with makgeolli and food",
+                "A guy sitting in front of his laptop with food and makgeolli.",
+                "A refrigerator filled with lots of makgeolli.",
+                "A table topped with plates of food and cups with makgeolli.",
+                "a man holding a makgeolli and checking a cell phone",
+                "The man is drinking a makgeolli while looking on his cell phone."
             ],
             "dongdongju": [
                 "Man in cycling clothes dongdongju beside his bicycle.",
@@ -748,6 +736,18 @@
                 "There is a man standing next to some yelek.",
                 "Man in yelek looking at display of electronic equipment.",
                 "There is a man that is holding yelek in his hand"
+            ],
+            "entari": [
+                "The man in entari is in a boat on the television screen.",
+                "A young male walking wearing entari outside.",
+                "A guy with entari is looking at his hand.",
+                "some entari are laying out on a bed",
+                "two people coming out of a building wearing entari",
+                "A man dressed all in black in entari",
+                "A guy wearing a suit in a entari store talking on a cell phone.",
+                "There is a man standing next to some entari.",
+                "Man in entari looking at display of electronic equipment.",
+                "There is a man that is holding entari in his hand"
             ]
         },
         "Egyptian": {

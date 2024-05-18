@@ -1,35 +1,35 @@
 {
     "food": {
         "Turkish": [
-            "mercimek kofte",
+            "cig kofte",
             "baklava",
             "cig borek",
-            "ezogelin corba",
-            "gozleme"
+            "dolma",
+            "manti"
         ],
         "Egyptian": [
-            "kofta",
+            "baba ghanoush",
             "koshari",
             "fatteh",
-            "falafel",
+            "shawarma",
             "mulukhiyah"
         ],
         "Korean": [
-            "rice cakes",
-            "pajeon",
-            "juk",
-            "japchae",
-            "hotteok"
+            "bibimbap",
+            "bulgogi",
+            "dongchimi",
+            "jjajangmyeon",
+            "kimchi"
         ],
         "Thai": [
-            "kao ka moo",
+            "tom kha gai",
             "khao soi",
-            "yam nua beef salad",
-            "pad kra pao",
+            "som tam",
+            "pad kra pao moo",
             "massaman curry"
         ],
         "Mexican": [
-            "elote",
+            "carnitas",
             "chiles en nogada",
             "gorditas",
             "mole poblano",
@@ -39,9 +39,8 @@
             "gazpacho",
             "patatas bravas",
             "tortilla espaola",
-            "pollo a la plancha",
-            "gambas al ajillo",
-            "paella"
+            "pulpo a la gallega",
+            "gambas al ajillo"
         ]
     },
     "drink": {
@@ -57,7 +56,7 @@
             "karkade"
         ],
         "Korean": [
-            "gamhongno",
+            "makgeolli",
             "dongdongju",
             "soju",
             "maesilju",
@@ -88,7 +87,8 @@
     "clothing": {
         "Turkish": [
             "abaya",
-            "yelek"
+            "yelek",
+            "entari"
         ],
         "Egyptian": [
             "keffiyeh",
