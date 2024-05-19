@@ -1,0 +1,79 @@
+Traceback (most recent call last):
+  File "/opt/anaconda3/bin/jupyter-notebook", line 11, in <module>
+    sys.exit(main())
+  File "/opt/anaconda3/lib/python3.7/site-packages/jupyter_core/application.py", line 268, in launch_instance
+    return super(JupyterApp, cls).launch_instance(argv=argv, **kwargs)
+  File "/opt/anaconda3/lib/python3.7/site-packages/traitlets/config/application.py", line 663, in launch_instance
+    app.initialize(argv)
+  File "</opt/anaconda3/lib/python3.7/site-packages/decorator.py:decorator-gen-7>", line 2, in initialize
+  File "/opt/anaconda3/lib/python3.7/site-packages/traitlets/config/application.py", line 87, in catch_config_error
+    return method(app, *args, **kwargs)
+  File "/opt/anaconda3/lib/python3.7/site-packages/notebook/notebookapp.py", line 1769, in initialize
+    self.init_webapp()
+  File "/opt/anaconda3/lib/python3.7/site-packages/notebook/notebookapp.py", line 1490, in init_webapp
+    self.http_server.listen(port, self.ip)
+  File "/opt/anaconda3/lib/python3.7/site-packages/tornado/tcpserver.py", line 151, in listen
+    sockets = bind_sockets(port, address=address)
+  File "/opt/anaconda3/lib/python3.7/site-packages/tornado/netutil.py", line 174, in bind_sockets
+    sock.bind(sockaddr)
+OSError: [Errno 99] Cannot assign requested address
+Traceback (most recent call last):
+  File "/opt/anaconda3/bin/jupyter-notebook", line 11, in <module>
+    sys.exit(main())
+  File "/opt/anaconda3/lib/python3.7/site-packages/jupyter_core/application.py", line 268, in launch_instance
+    return super(JupyterApp, cls).launch_instance(argv=argv, **kwargs)
+  File "/opt/anaconda3/lib/python3.7/site-packages/traitlets/config/application.py", line 663, in launch_instance
+    app.initialize(argv)
+  File "</opt/anaconda3/lib/python3.7/site-packages/decorator.py:decorator-gen-7>", line 2, in initialize
+  File "/opt/anaconda3/lib/python3.7/site-packages/traitlets/config/application.py", line 87, in catch_config_error
+    return method(app, *args, **kwargs)
+  File "/opt/anaconda3/lib/python3.7/site-packages/notebook/notebookapp.py", line 1769, in initialize
+    self.init_webapp()
+  File "/opt/anaconda3/lib/python3.7/site-packages/notebook/notebookapp.py", line 1490, in init_webapp
+    self.http_server.listen(port, self.ip)
+  File "/opt/anaconda3/lib/python3.7/site-packages/tornado/tcpserver.py", line 151, in listen
+    sockets = bind_sockets(port, address=address)
+  File "/opt/anaconda3/lib/python3.7/site-packages/tornado/netutil.py", line 174, in bind_sockets
+    sock.bind(sockaddr)
+OSError: [Errno 99] Cannot assign requested address
+Traceback (most recent call last):
+  File "/opt/anaconda3/bin/jupyter-notebook", line 11, in <module>
+    sys.exit(main())
+  File "/opt/anaconda3/lib/python3.7/site-packages/jupyter_core/application.py", line 268, in launch_instance
+    return super(JupyterApp, cls).launch_instance(argv=argv, **kwargs)
+  File "/opt/anaconda3/lib/python3.7/site-packages/traitlets/config/application.py", line 663, in launch_instance
+    app.initialize(argv)
+  File "</opt/anaconda3/lib/python3.7/site-packages/decorator.py:decorator-gen-7>", line 2, in initialize
+  File "/opt/anaconda3/lib/python3.7/site-packages/traitlets/config/application.py", line 87, in catch_config_error
+    return method(app, *args, **kwargs)
+  File "/opt/anaconda3/lib/python3.7/site-packages/notebook/notebookapp.py", line 1769, in initialize
+    self.init_webapp()
+  File "/opt/anaconda3/lib/python3.7/site-packages/notebook/notebookapp.py", line 1490, in init_webapp
+    self.http_server.listen(port, self.ip)
+  File "/opt/anaconda3/lib/python3.7/site-packages/tornado/tcpserver.py", line 151, in listen
+    sockets = bind_sockets(port, address=address)
+  File "/opt/anaconda3/lib/python3.7/site-packages/tornado/netutil.py", line 174, in bind_sockets
+    sock.bind(sockaddr)
+OSError: [Errno 99] Cannot assign requested address
+Usage:
+  ollama [flags]
+  ollama [command]
+
+Available Commands:
+  serve       Start ollama
+  create      Create a model from a Modelfile
+  show        Show information for a model
+  run         Run a model
+  pull        Pull a model from a registry
+  push        Push a model to a registry
+  list        List models
+  ps          List running models
+  cp          Copy a model
+  rm          Remove a model
+  help        Help about any command
+
+Flags:
+  -h, --help      help for ollama
+  -v, --version   Show version information
+
+Use "ollama [command] --help" for more information about a command.

@@ -1,0 +1,414 @@
+nohup: ignoring input
+[NbConvertApp] Converting notebook final_augmentation_llama2_13b.ipynb to notebook
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/ragllama/bin/jupyter-nbconvert", line 11, in <module>
+    sys.exit(main())
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/jupyter_core/application.py", line 280, in launch_instance
+    super().launch_instance(argv=argv, **kwargs)
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/traitlets/config/application.py", line 992, in launch_instance
+    app.start()
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/nbconvertapp.py", line 412, in start
+    self.convert_notebooks()
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/nbconvertapp.py", line 590, in convert_notebooks
+    self.convert_single_notebook(notebook_filename)
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/nbconvertapp.py", line 556, in convert_single_notebook
+    output, resources = self.export_single_notebook(
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/nbconvertapp.py", line 479, in export_single_notebook
+    output, resources = self.exporter.from_filename(
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/exporters/exporter.py", line 203, in from_filename
+    return self.from_file(f, resources=resources, **kw)
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/exporters/exporter.py", line 222, in from_file
+    return self.from_notebook_node(
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/exporters/notebook.py", line 36, in from_notebook_node
+    nb_copy, resources = super().from_notebook_node(nb, resources, **kw)
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/exporters/exporter.py", line 156, in from_notebook_node
+    nb_copy, resources = self._preprocess(nb_copy, resources)
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/exporters/exporter.py", line 354, in _preprocess
+    nbc, resc = preprocessor(nbc, resc)  # type:ignore[operator]
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/preprocessors/base.py", line 48, in __call__
+    return self.preprocess(nb, resources)
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/preprocessors/execute.py", line 102, in preprocess
+    self.preprocess_cell(cell, resources, index)
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/preprocessors/execute.py", line 123, in preprocess_cell
+    cell = self.execute_cell(cell, index, store_history=True)
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
+    return loop.run_until_complete(inner)
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete
+    self.run_forever()
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/asyncio/base_events.py", line 603, in run_forever
+    self._run_once()
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/asyncio/base_events.py", line 1871, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/selectors.py", line 469, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+KeyboardInterrupt
+Task exception was never retrieved
+future: <Task finished name='Task-30' coro=<NotebookClient.async_execute_cell() done, defined at /opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbclient/client.py:916> exception=CellExecutionError('An error occurred while executing the following cell:\n------------------\nimport pandas as pd\nfrom tqdm.notebook import tqdm\n\ntotal = sum(len(sentences) for national_list in augmented_sentence.values() for keywords in national_list.values() for sentences in keywords.values())\n\ndf_list = []\n\nwith tqdm(total=total, desc="Overall Progress") as pbar:\n    # 여기서 augmented_sentence, keyword_assertions, chain, query는 이미 정의되어 있다고 가정합니다.\n    for facet, national_list in augmented_sentence.items():\n        for national, keywords in national_list.items():\n            for keyword, aug_sentences in keywords.items():\n                for aug_sentence in aug_sentences:\n                    sentence = aug_sentence\n                    assertions = keyword_assertions[keyword]\n\n                    results = chain.invoke({"sentence": sentence, "information": assertions, "query": query})                \n                    final_augmented = results.split(\'\\n\')[-1]\n\n                    df_list.append({\n                        \'facet\': facet, \n                        \'national\': national, \n                        \'keyword\': keyword, \n                        \'final_augmented\': final_augmented, \n                        \'result\': results\n                    })\n\n                    pbar.update(1)\n\n\ndf = pd.DataFrame(df_list)\n\ndf.to_excel(\'final_augmented_sentence.xlsx\', index=False)\n------------------\n\n\n\x1b[0;31m---------------------------------------------------------------------------\x1b[0m\n\x1b[0;31mKeyboardInterrupt\x1b[0m                         Traceback (most recent call last)\nCell \x1b[0;32mIn[7], line 17\x1b[0m\n\x1b[1;32m     14\x1b[0m sentence \x1b[38;5;241m=\x1b[39m aug_sentence\n\x1b[1;32m     15\x1b[0m assertions \x1b[38;5;241m=\x1b[39m keyword_assertions[keyword]\n\x1b[0;32m---> 17\x1b[0m results \x1b[38;5;241m=\x1b[39m \x1b[43mchain\x1b[49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43minvoke\x1b[49m\x1b[43m(\x1b[49m\x1b[43m{\x1b[49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[38;5;124;43msentence\x1b[39;49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[43m:\x1b[49m\x1b[43m \x1b[49m\x1b[43msentence\x1b[49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[38;5;124;43minformation\x1b[39;49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[43m:\x1b[49m\x1b[43m \x1b[49m\x1b[43massertions\x1b[49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[38;5;124;43mquery\x1b[39;49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[43m:\x1b[49m\x1b[43m \x1b[49m\x1b[43mquery\x1b[49m\x1b[43m}\x1b[49m\x1b[43m)\x1b[49m                \n\x1b[1;32m     18\x1b[0m final_augmented \x1b[38;5;241m=\x1b[39m results\x1b[38;5;241m.\x1b[39msplit(\x1b[38;5;124m\'\x1b[39m\x1b[38;5;130;01m\\n\x1b[39;00m\x1b[38;5;124m\'\x1b[39m)[\x1b[38;5;241m-\x1b[39m\x1b[38;5;241m1\x1b[39m]\n\x1b[1;32m     20\x1b[0m df_list\x1b[38;5;241m.\x1b[39mappend({\n\x1b[1;32m     21\x1b[0m     \x1b[38;5;124m\'\x1b[39m\x1b[38;5;124mfacet\x1b[39m\x1b[38;5;124m\'\x1b[39m: facet, \n\x1b[1;32m     22\x1b[0m     \x1b[38;5;124m\'\x1b[39m\x1b[38;5;124mnational\x1b[39m\x1b[38;5;124m\'\x1b[39m: national, \n\x1b[0;32m   (...)\x1b[0m\n\x1b[1;32m     25\x1b[0m     \x1b[38;5;124m\'\x1b[39m\x1b[38;5;124mresult\x1b[39m\x1b[38;5;124m\'\x1b[39m: results\n\x1b[1;32m     26\x1b[0m })\n\nFile \x1b[0;32m~/.local/lib/python3.10/site-packages/langchain_core/runnables/base.py:2368\x1b[0m, in \x1b[0;36mRunnableSequence.invoke\x1b[0;34m(self, input, config)\x1b[0m\n\x1b[1;32m   2366\x1b[0m \x1b[38;5;28;01mtry\x1b[39;00m:\n\x1b[1;32m   2367\x1b[0m     \x1b[38;5;28;01mfor\x1b[39;00m i, step \x1b[38;5;129;01min\x1b[39;00m \x1b[38;5;28menumerate\x1b[39m(\x1b[38;5;28mself\x1b[39m\x1b[38;5;241m.\x1b[39msteps):\n\x1b[0;32m-> 2368\x1b[0m         \x1b[38;5;28minput\x1b[39m \x1b[38;5;241m=\x1b[39m \x1b[43mstep\x1b[49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43minvoke\x1b[49m\x1b[43m(\x1b[49m\n\x1b[1;32m   2369\x1b[0m \x1b[43m            \x1b[49m\x1b[38;5;28;43minput\x1b[39;49m\x1b[43m,\x1b[49m\n\x1b[1;32m   2370\x1b[0m \x1b[43m            \x1b[49m\x1b[38;5;66;43;03m# mark each step as a child run\x1b[39;49;00m\n\x1b[1;32m   2371\x1b[0m \x1b[43m            \x1b[49m\x1b[43mpatch_config\x1b[49m\x1b[43m(\x1b[49m\n\x1b[1;32m   2372\x1b[0m \x1b[43m                \x1b[49m\x1b[43mconfig\x1b[49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[43mcallbacks\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mrun_manager\x1b[49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mget_child\x1b[49m\x1b[43m(\x1b[49m\x1b[38;5;124;43mf\x1b[39;49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[38;5;124;43mseq:step:\x1b[39;49m\x1b[38;5;132;43;01m{\x1b[39;49;00m\x1b[43mi\x1b[49m\x1b[38;5;241;43m+\x1b[39;49m\x1b[38;5;241;43m1\x1b[39;49m\x1b[38;5;132;43;01m}\x1b[39;49;00m\x1b[38;5;124;43m"\x1b[39;49m\x1b[43m)\x1b[49m\n\x1b[1;32m   2373\x1b[0m \x1b[43m            \x1b[49m\x1b[43m)\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m   2374\x1b[0m \x1b[43m        \x1b[49m\x1b[43m)\x1b[49m\n\x1b[1;32m   2375\x1b[0m \x1b[38;5;66;03m# finish the root run\x1b[39;00m\n\x1b[1;32m   2376\x1b[0m \x1b[38;5;28;01mexcept\x1b[39;00m \x1b[38;5;167;01mBaseException\x1b[39;00m \x1b[38;5;28;01mas\x1b[39;00m e:\n\nFile \x1b[0;32m~/.local/lib/python3.10/site-packages/langchain_core/language_models/chat_models.py:170\x1b[0m, in \x1b[0;36mBaseChatModel.invoke\x1b[0;34m(self, input, config, stop, **kwargs)\x1b[0m\n\x1b[1;32m    159\x1b[0m \x1b[38;5;28;01mdef\x1b[39;00m \x1b[38;5;21minvoke\x1b[39m(\n\x1b[1;32m    160\x1b[0m     \x1b[38;5;28mself\x1b[39m,\n\x1b[1;32m    161\x1b[0m     \x1b[38;5;28minput\x1b[39m: LanguageModelInput,\n\x1b[0;32m   (...)\x1b[0m\n\x1b[1;32m    165\x1b[0m     \x1b[38;5;241m*\x1b[39m\x1b[38;5;241m*\x1b[39mkwargs: Any,\n\x1b[1;32m    166\x1b[0m ) \x1b[38;5;241m-\x1b[39m\x1b[38;5;241m>\x1b[39m BaseMessage:\n\x1b[1;32m    167\x1b[0m     config \x1b[38;5;241m=\x1b[39m ensure_config(config)\n\x1b[1;32m    168\x1b[0m     \x1b[38;5;28;01mreturn\x1b[39;00m cast(\n\x1b[1;32m    169\x1b[0m         ChatGeneration,\n\x1b[0;32m--> 170\x1b[0m         \x1b[38;5;28;43mself\x1b[39;49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mgenerate_prompt\x1b[49m\x1b[43m(\x1b[49m\n\x1b[1;32m    171\x1b[0m \x1b[43m            \x1b[49m\x1b[43m[\x1b[49m\x1b[38;5;28;43mself\x1b[39;49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43m_convert_input\x1b[49m\x1b[43m(\x1b[49m\x1b[38;5;28;43minput\x1b[39;49m\x1b[43m)\x1b[49m\x1b[43m]\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    172\x1b[0m \x1b[43m            \x1b[49m\x1b[43mstop\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mstop\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    173\x1b[0m \x1b[43m            \x1b[49m\x1b[43mcallbacks\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mconfig\x1b[49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mget\x1b[49m\x1b[43m(\x1b[49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[38;5;124;43mcallbacks\x1b[39;49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[43m)\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    174\x1b[0m \x1b[43m            \x1b[49m\x1b[43mtags\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mconfig\x1b[49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mget\x1b[49m\x1b[43m(\x1b[49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[38;5;124;43mtags\x1b[39;49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[43m)\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    175\x1b[0m \x1b[43m            \x1b[49m\x1b[43mmetadata\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mconfig\x1b[49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mget\x1b[49m\x1b[43m(\x1b[49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[38;5;124;43mmetadata\x1b[39;49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[43m)\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    176\x1b[0m \x1b[43m            \x1b[49m\x1b[43mrun_name\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mconfig\x1b[49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mget\x1b[49m\x1b[43m(\x1b[49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[38;5;124;43mrun_name\x1b[39;49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[43m)\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    177\x1b[0m \x1b[43m            \x1b[49m\x1b[43mrun_id\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mconfig\x1b[49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mpop\x1b[49m\x1b[43m(\x1b[49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[38;5;124;43mrun_id\x1b[39;49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[38;5;28;43;01mNone\x1b[39;49;00m\x1b[43m)\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    178\x1b[0m \x1b[43m            \x1b[49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[43mkwargs\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    179\x1b[0m \x1b[43m        \x1b[49m\x1b[43m)\x1b[49m\x1b[38;5;241m.\x1b[39mgenerations[\x1b[38;5;241m0\x1b[39m][\x1b[38;5;241m0\x1b[39m],\n\x1b[1;32m    180\x1b[0m     )\x1b[38;5;241m.\x1b[39mmessage\n\nFile \x1b[0;32m~/.local/lib/python3.10/site-packages/langchain_core/language_models/chat_models.py:599\x1b[0m, in \x1b[0;36mBaseChatModel.generate_prompt\x1b[0;34m(self, prompts, stop, callbacks, **kwargs)\x1b[0m\n\x1b[1;32m    591\x1b[0m \x1b[38;5;28;01mdef\x1b[39;00m \x1b[38;5;21mgenerate_prompt\x1b[39m(\n\x1b[1;32m    592\x1b[0m     \x1b[38;5;28mself\x1b[39m,\n\x1b[1;32m    593\x1b[0m     prompts: List[PromptValue],\n\x1b[0;32m   (...)\x1b[0m\n\x1b[1;32m    596\x1b[0m     \x1b[38;5;241m*\x1b[39m\x1b[38;5;241m*\x1b[39mkwargs: Any,\n\x1b[1;32m    597\x1b[0m ) \x1b[38;5;241m-\x1b[39m\x1b[38;5;241m>\x1b[39m LLMResult:\n\x1b[1;32m    598\x1b[0m     prompt_messages \x1b[38;5;241m=\x1b[39m [p\x1b[38;5;241m.\x1b[39mto_messages() \x1b[38;5;28;01mfor\x1b[39;00m p \x1b[38;5;129;01min\x1b[39;00m prompts]\n\x1b[0;32m--> 599\x1b[0m     \x1b[38;5;28;01mreturn\x1b[39;00m \x1b[38;5;28;43mself\x1b[39;49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mgenerate\x1b[49m\x1b[43m(\x1b[49m\x1b[43mprompt_messages\x1b[49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[43mstop\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mstop\x1b[49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[43mcallbacks\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mcallbacks\x1b[49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[43mkwargs\x1b[49m\x1b[43m)\x1b[49m\n\nFile \x1b[0;32m~/.local/lib/python3.10/site-packages/langchain_core/language_models/chat_models.py:456\x1b[0m, in \x1b[0;36mBaseChatModel.generate\x1b[0;34m(self, messages, stop, callbacks, tags, metadata, run_name, run_id, **kwargs)\x1b[0m\n\x1b[1;32m    454\x1b[0m         \x1b[38;5;28;01mif\x1b[39;00m run_managers:\n\x1b[1;32m    455\x1b[0m             run_managers[i]\x1b[38;5;241m.\x1b[39mon_llm_error(e, response\x1b[38;5;241m=\x1b[39mLLMResult(generations\x1b[38;5;241m=\x1b[39m[]))\n\x1b[0;32m--> 456\x1b[0m         \x1b[38;5;28;01mraise\x1b[39;00m e\n\x1b[1;32m    457\x1b[0m flattened_outputs \x1b[38;5;241m=\x1b[39m [\n\x1b[1;32m    458\x1b[0m     LLMResult(generations\x1b[38;5;241m=\x1b[39m[res\x1b[38;5;241m.\x1b[39mgenerations], llm_output\x1b[38;5;241m=\x1b[39mres\x1b[38;5;241m.\x1b[39mllm_output)  \x1b[38;5;66;03m# type: ignore[list-item]\x1b[39;00m\n\x1b[1;32m    459\x1b[0m     \x1b[38;5;28;01mfor\x1b[39;00m res \x1b[38;5;129;01min\x1b[39;00m results\n\x1b[1;32m    460\x1b[0m ]\n\x1b[1;32m    461\x1b[0m llm_output \x1b[38;5;241m=\x1b[39m \x1b[38;5;28mself\x1b[39m\x1b[38;5;241m.\x1b[39m_combine_llm_outputs([res\x1b[38;5;241m.\x1b[39mllm_output \x1b[38;5;28;01mfor\x1b[39;00m res \x1b[38;5;129;01min\x1b[39;00m results])\n\nFile \x1b[0;32m~/.local/lib/python3.10/site-packages/langchain_core/language_models/chat_models.py:446\x1b[0m, in \x1b[0;36mBaseChatModel.generate\x1b[0;34m(self, messages, stop, callbacks, tags, metadata, run_name, run_id, **kwargs)\x1b[0m\n\x1b[1;32m    443\x1b[0m \x1b[38;5;28;01mfor\x1b[39;00m i, m \x1b[38;5;129;01min\x1b[39;00m \x1b[38;5;28menumerate\x1b[39m(messages):\n\x1b[1;32m    444\x1b[0m     \x1b[38;5;28;01mtry\x1b[39;00m:\n\x1b[1;32m    445\x1b[0m         results\x1b[38;5;241m.\x1b[39mappend(\n\x1b[0;32m--> 446\x1b[0m             \x1b[38;5;28;43mself\x1b[39;49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43m_generate_with_cache\x1b[49m\x1b[43m(\x1b[49m\n\x1b[1;32m    447\x1b[0m \x1b[43m                \x1b[49m\x1b[43mm\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    448\x1b[0m \x1b[43m                \x1b[49m\x1b[43mstop\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mstop\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    449\x1b[0m \x1b[43m                \x1b[49m\x1b[43mrun_manager\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mrun_managers\x1b[49m\x1b[43m[\x1b[49m\x1b[43mi\x1b[49m\x1b[43m]\x1b[49m\x1b[43m \x1b[49m\x1b[38;5;28;43;01mif\x1b[39;49;00m\x1b[43m \x1b[49m\x1b[43mrun_managers\x1b[49m\x1b[43m \x1b[49m\x1b[38;5;28;43;01melse\x1b[39;49;00m\x1b[43m \x1b[49m\x1b[38;5;28;43;01mNone\x1b[39;49;00m\x1b[43m,\x1b[49m\n\x1b[1;32m    450\x1b[0m \x1b[43m                \x1b[49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[43mkwargs\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    451\x1b[0m \x1b[43m            \x1b[49m\x1b[43m)\x1b[49m\n\x1b[1;32m    452\x1b[0m         )\n\x1b[1;32m    453\x1b[0m     \x1b[38;5;28;01mexcept\x1b[39;00m \x1b[38;5;167;01mBaseException\x1b[39;00m \x1b[38;5;28;01mas\x1b[39;00m e:\n\x1b[1;32m    454\x1b[0m         \x1b[38;5;28;01mif\x1b[39;00m run_managers:\n\nFile \x1b[0;32m~/.local/lib/python3.10/site-packages/langchain_core/language_models/chat_models.py:671\x1b[0m, in \x1b[0;36mBaseChatModel._generate_with_cache\x1b[0;34m(self, messages, stop, run_manager, **kwargs)\x1b[0m\n\x1b[1;32m    669\x1b[0m \x1b[38;5;28;01melse\x1b[39;00m:\n\x1b[1;32m    670\x1b[0m     \x1b[38;5;28;01mif\x1b[39;00m inspect\x1b[38;5;241m.\x1b[39msignature(\x1b[38;5;28mself\x1b[39m\x1b[38;5;241m.\x1b[39m_generate)\x1b[38;5;241m.\x1b[39mparameters\x1b[38;5;241m.\x1b[39mget(\x1b[38;5;124m"\x1b[39m\x1b[38;5;124mrun_manager\x1b[39m\x1b[38;5;124m"\x1b[39m):\n\x1b[0;32m--> 671\x1b[0m         result \x1b[38;5;241m=\x1b[39m \x1b[38;5;28;43mself\x1b[39;49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43m_generate\x1b[49m\x1b[43m(\x1b[49m\n\x1b[1;32m    672\x1b[0m \x1b[43m            \x1b[49m\x1b[43mmessages\x1b[49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[43mstop\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mstop\x1b[49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[43mrun_manager\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mrun_manager\x1b[49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[43mkwargs\x1b[49m\n\x1b[1;32m    673\x1b[0m \x1b[43m        \x1b[49m\x1b[43m)\x1b[49m\n\x1b[1;32m    674\x1b[0m     \x1b[38;5;28;01melse\x1b[39;00m:\n\x1b[1;32m    675\x1b[0m         result \x1b[38;5;241m=\x1b[39m \x1b[38;5;28mself\x1b[39m\x1b[38;5;241m.\x1b[39m_generate(messages, stop\x1b[38;5;241m=\x1b[39mstop, \x1b[38;5;241m*\x1b[39m\x1b[38;5;241m*\x1b[39mkwargs)\n\nFile \x1b[0;32m~/.local/lib/python3.10/site-packages/langchain_community/chat_models/ollama.py:259\x1b[0m, in \x1b[0;36mChatOllama._generate\x1b[0;34m(self, messages, stop, run_manager, **kwargs)\x1b[0m\n\x1b[1;32m    235\x1b[0m \x1b[38;5;28;01mdef\x1b[39;00m \x1b[38;5;21m_generate\x1b[39m(\n\x1b[1;32m    236\x1b[0m     \x1b[38;5;28mself\x1b[39m,\n\x1b[1;32m    237\x1b[0m     messages: List[BaseMessage],\n\x1b[0;32m   (...)\x1b[0m\n\x1b[1;32m    240\x1b[0m     \x1b[38;5;241m*\x1b[39m\x1b[38;5;241m*\x1b[39mkwargs: Any,\n\x1b[1;32m    241\x1b[0m ) \x1b[38;5;241m-\x1b[39m\x1b[38;5;241m>\x1b[39m ChatResult:\n\x1b[1;32m    242\x1b[0m \x1b[38;5;250m    \x1b[39m\x1b[38;5;124;03m"""Call out to Ollama\'s generate endpoint.\x1b[39;00m\n\x1b[1;32m    243\x1b[0m \n\x1b[1;32m    244\x1b[0m \x1b[38;5;124;03m    Args:\x1b[39;00m\n\x1b[0;32m   (...)\x1b[0m\n\x1b[1;32m    256\x1b[0m \x1b[38;5;124;03m            ])\x1b[39;00m\n\x1b[1;32m    257\x1b[0m \x1b[38;5;124;03m    """\x1b[39;00m\n\x1b[0;32m--> 259\x1b[0m     final_chunk \x1b[38;5;241m=\x1b[39m \x1b[38;5;28;43mself\x1b[39;49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43m_chat_stream_with_aggregation\x1b[49m\x1b[43m(\x1b[49m\n\x1b[1;32m    260\x1b[0m \x1b[43m        \x1b[49m\x1b[43mmessages\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    261\x1b[0m \x1b[43m        \x1b[49m\x1b[43mstop\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mstop\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    262\x1b[0m \x1b[43m        \x1b[49m\x1b[43mrun_manager\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mrun_manager\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    263\x1b[0m \x1b[43m        \x1b[49m\x1b[43mverbose\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[38;5;28;43mself\x1b[39;49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mverbose\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    264\x1b[0m \x1b[43m        \x1b[49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[43mkwargs\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    265\x1b[0m \x1b[43m    \x1b[49m\x1b[43m)\x1b[49m\n\x1b[1;32m    266\x1b[0m     chat_generation \x1b[38;5;241m=\x1b[39m ChatGeneration(\n\x1b[1;32m    267\x1b[0m         message\x1b[38;5;241m=\x1b[39mAIMessage(content\x1b[38;5;241m=\x1b[39mfinal_chunk\x1b[38;5;241m.\x1b[39mtext),\n\x1b[1;32m    268\x1b[0m         generation_info\x1b[38;5;241m=\x1b[39mfinal_chunk\x1b[38;5;241m.\x1b[39mgeneration_info,\n\x1b[1;32m    269\x1b[0m     )\n\x1b[1;32m    270\x1b[0m     \x1b[38;5;28;01mreturn\x1b[39;00m ChatResult(generations\x1b[38;5;241m=\x1b[39m[chat_generation])\n\nFile \x1b[0;32m~/.local/lib/python3.10/site-packages/langchain_community/chat_models/ollama.py:190\x1b[0m, in \x1b[0;36mChatOllama._chat_stream_with_aggregation\x1b[0;34m(self, messages, stop, run_manager, verbose, **kwargs)\x1b[0m\n\x1b[1;32m    181\x1b[0m \x1b[38;5;28;01mdef\x1b[39;00m \x1b[38;5;21m_chat_stream_with_aggregation\x1b[39m(\n\x1b[1;32m    182\x1b[0m     \x1b[38;5;28mself\x1b[39m,\n\x1b[1;32m    183\x1b[0m     messages: List[BaseMessage],\n\x1b[0;32m   (...)\x1b[0m\n\x1b[1;32m    187\x1b[0m     \x1b[38;5;241m*\x1b[39m\x1b[38;5;241m*\x1b[39mkwargs: Any,\n\x1b[1;32m    188\x1b[0m ) \x1b[38;5;241m-\x1b[39m\x1b[38;5;241m>\x1b[39m ChatGenerationChunk:\n\x1b[1;32m    189\x1b[0m     final_chunk: Optional[ChatGenerationChunk] \x1b[38;5;241m=\x1b[39m \x1b[38;5;28;01mNone\x1b[39;00m\n\x1b[0;32m--> 190\x1b[0m     \x1b[38;5;28;01mfor\x1b[39;00m stream_resp \x1b[38;5;129;01min\x1b[39;00m \x1b[38;5;28mself\x1b[39m\x1b[38;5;241m.\x1b[39m_create_chat_stream(messages, stop, \x1b[38;5;241m*\x1b[39m\x1b[38;5;241m*\x1b[39mkwargs):\n\x1b[1;32m    191\x1b[0m         \x1b[38;5;28;01mif\x1b[39;00m stream_resp:\n\x1b[1;32m    192\x1b[0m             chunk \x1b[38;5;241m=\x1b[39m _chat_stream_response_to_chat_generation_chunk(stream_resp)\n\nFile \x1b[0;32m~/.local/lib/python3.10/site-packages/langchain_community/chat_models/ollama.py:162\x1b[0m, in \x1b[0;36mChatOllama._create_chat_stream\x1b[0;34m(self, messages, stop, **kwargs)\x1b[0m\n\x1b[1;32m    152\x1b[0m \x1b[38;5;28;01mdef\x1b[39;00m \x1b[38;5;21m_create_chat_stream\x1b[39m(\n\x1b[1;32m    153\x1b[0m     \x1b[38;5;28mself\x1b[39m,\n\x1b[1;32m    154\x1b[0m     messages: List[BaseMessage],\n\x1b[1;32m    155\x1b[0m     stop: Optional[List[\x1b[38;5;28mstr\x1b[39m]] \x1b[38;5;241m=\x1b[39m \x1b[38;5;28;01mNone\x1b[39;00m,\n\x1b[1;32m    156\x1b[0m     \x1b[38;5;241m*\x1b[39m\x1b[38;5;241m*\x1b[39mkwargs: Any,\n\x1b[1;32m    157\x1b[0m ) \x1b[38;5;241m-\x1b[39m\x1b[38;5;241m>\x1b[39m Iterator[\x1b[38;5;28mstr\x1b[39m]:\n\x1b[1;32m    158\x1b[0m     payload \x1b[38;5;241m=\x1b[39m {\n\x1b[1;32m    159\x1b[0m         \x1b[38;5;124m"\x1b[39m\x1b[38;5;124mmodel\x1b[39m\x1b[38;5;124m"\x1b[39m: \x1b[38;5;28mself\x1b[39m\x1b[38;5;241m.\x1b[39mmodel,\n\x1b[1;32m    160\x1b[0m         \x1b[38;5;124m"\x1b[39m\x1b[38;5;124mmessages\x1b[39m\x1b[38;5;124m"\x1b[39m: \x1b[38;5;28mself\x1b[39m\x1b[38;5;241m.\x1b[39m_convert_messages_to_ollama_messages(messages),\n\x1b[1;32m    161\x1b[0m     }\n\x1b[0;32m--> 162\x1b[0m     \x1b[38;5;28;01myield from\x1b[39;00m \x1b[38;5;28;43mself\x1b[39;49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43m_create_stream\x1b[49m\x1b[43m(\x1b[49m\n\x1b[1;32m    163\x1b[0m \x1b[43m        \x1b[49m\x1b[43mpayload\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mpayload\x1b[49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[43mstop\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mstop\x1b[49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[43mapi_url\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[38;5;124;43mf\x1b[39;49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[38;5;132;43;01m{\x1b[39;49;00m\x1b[38;5;28;43mself\x1b[39;49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mbase_url\x1b[49m\x1b[38;5;132;43;01m}\x1b[39;49;00m\x1b[38;5;124;43m/api/chat\x1b[39;49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[43mkwargs\x1b[49m\n\x1b[1;32m    164\x1b[0m \x1b[43m    \x1b[49m\x1b[43m)\x1b[49m\n\nFile \x1b[0;32m~/.local/lib/python3.10/site-packages/langchain_community/llms/ollama.py:231\x1b[0m, in \x1b[0;36m_OllamaCommon._create_stream\x1b[0;34m(self, api_url, payload, stop, **kwargs)\x1b[0m\n\x1b[1;32m    224\x1b[0m \x1b[38;5;28;01melse\x1b[39;00m:\n\x1b[1;32m    225\x1b[0m     request_payload \x1b[38;5;241m=\x1b[39m {\n\x1b[1;32m    226\x1b[0m         \x1b[38;5;124m"\x1b[39m\x1b[38;5;124mprompt\x1b[39m\x1b[38;5;124m"\x1b[39m: payload\x1b[38;5;241m.\x1b[39mget(\x1b[38;5;124m"\x1b[39m\x1b[38;5;124mprompt\x1b[39m\x1b[38;5;124m"\x1b[39m),\n\x1b[1;32m    227\x1b[0m         \x1b[38;5;124m"\x1b[39m\x1b[38;5;124mimages\x1b[39m\x1b[38;5;124m"\x1b[39m: payload\x1b[38;5;241m.\x1b[39mget(\x1b[38;5;124m"\x1b[39m\x1b[38;5;124mimages\x1b[39m\x1b[38;5;124m"\x1b[39m, []),\n\x1b[1;32m    228\x1b[0m         \x1b[38;5;241m*\x1b[39m\x1b[38;5;241m*\x1b[39mparams,\n\x1b[1;32m    229\x1b[0m     }\n\x1b[0;32m--> 231\x1b[0m response \x1b[38;5;241m=\x1b[39m \x1b[43mrequests\x1b[49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mpost\x1b[49m\x1b[43m(\x1b[49m\n\x1b[1;32m    232\x1b[0m \x1b[43m    \x1b[49m\x1b[43murl\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mapi_url\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    233\x1b[0m \x1b[43m    \x1b[49m\x1b[43mheaders\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43m{\x1b[49m\n\x1b[1;32m    234\x1b[0m \x1b[43m        \x1b[49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[38;5;124;43mContent-Type\x1b[39;49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[43m:\x1b[49m\x1b[43m \x1b[49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[38;5;124;43mapplication/json\x1b[39;49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[43m,\x1b[49m\n\x1b[1;32m    235\x1b[0m \x1b[43m        \x1b[49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[43m(\x1b[49m\x1b[38;5;28;43mself\x1b[39;49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mheaders\x1b[49m\x1b[43m \x1b[49m\x1b[38;5;28;43;01mif\x1b[39;49;00m\x1b[43m \x1b[49m\x1b[38;5;28;43misinstance\x1b[39;49m\x1b[43m(\x1b[49m\x1b[38;5;28;43mself\x1b[39;49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mheaders\x1b[49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[38;5;28;43mdict\x1b[39;49m\x1b[43m)\x1b[49m\x1b[43m \x1b[49m\x1b[38;5;28;43;01melse\x1b[39;49;00m\x1b[43m \x1b[49m\x1b[43m{\x1b[49m\x1b[43m}\x1b[49m\x1b[43m)\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    236\x1b[0m \x1b[43m    \x1b[49m\x1b[43m}\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    237\x1b[0m \x1b[43m    \x1b[49m\x1b[43mjson\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mrequest_payload\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    238\x1b[0m \x1b[43m    \x1b[49m\x1b[43mstream\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[38;5;28;43;01mTrue\x1b[39;49;00m\x1b[43m,\x1b[49m\n\x1b[1;32m    239\x1b[0m \x1b[43m    \x1b[49m\x1b[43mtimeout\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[38;5;28;43mself\x1b[39;49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mtimeout\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    240\x1b[0m \x1b[43m\x1b[49m\x1b[43m)\x1b[49m\n\x1b[1;32m    241\x1b[0m response\x1b[38;5;241m.\x1b[39mencoding \x1b[38;5;241m=\x1b[39m \x1b[38;5;124m"\x1b[39m\x1b[38;5;124mutf-8\x1b[39m\x1b[38;5;124m"\x1b[39m\n\x1b[1;32m    242\x1b[0m \x1b[38;5;28;01mif\x1b[39;00m response\x1b[38;5;241m.\x1b[39mstatus_code \x1b[38;5;241m!=\x1b[39m \x1b[38;5;241m200\x1b[39m:\n\nFile \x1b[0;32m~/.local/lib/python3.10/site-packages/requests/api.py:115\x1b[0m, in \x1b[0;36mpost\x1b[0;34m(url, data, json, **kwargs)\x1b[0m\n\x1b[1;32m    103\x1b[0m \x1b[38;5;28;01mdef\x1b[39;00m \x1b[38;5;21mpost\x1b[39m(url, data\x1b[38;5;241m=\x1b[39m\x1b[38;5;28;01mNone\x1b[39;00m, json\x1b[38;5;241m=\x1b[39m\x1b[38;5;28;01mNone\x1b[39;00m, \x1b[38;5;241m*\x1b[39m\x1b[38;5;241m*\x1b[39mkwargs):\n\x1b[1;32m    104\x1b[0m \x1b[38;5;250m    \x1b[39m\x1b[38;5;124mr\x1b[39m\x1b[38;5;124;03m"""Sends a POST request.\x1b[39;00m\n\x1b[1;32m    105\x1b[0m \n\x1b[1;32m    106\x1b[0m \x1b[38;5;124;03m    :param url: URL for the new :class:`Request` object.\x1b[39;00m\n\x1b[0;32m   (...)\x1b[0m\n\x1b[1;32m    112\x1b[0m \x1b[38;5;124;03m    :rtype: requests.Response\x1b[39;00m\n\x1b[1;32m    113\x1b[0m \x1b[38;5;124;03m    """\x1b[39;00m\n\x1b[0;32m--> 115\x1b[0m     \x1b[38;5;28;01mreturn\x1b[39;00m \x1b[43mrequest\x1b[49m\x1b[43m(\x1b[49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[38;5;124;43mpost\x1b[39;49m\x1b[38;5;124;43m"\x1b[39;49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[43murl\x1b[49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[43mdata\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mdata\x1b[49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[43mjson\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mjson\x1b[49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[43mkwargs\x1b[49m\x1b[43m)\x1b[49m\n\nFile \x1b[0;32m~/.local/lib/python3.10/site-packages/requests/api.py:59\x1b[0m, in \x1b[0;36mrequest\x1b[0;34m(method, url, **kwargs)\x1b[0m\n\x1b[1;32m     55\x1b[0m \x1b[38;5;66;03m# By using the \'with\' statement we are sure the session is closed, thus we\x1b[39;00m\n\x1b[1;32m     56\x1b[0m \x1b[38;5;66;03m# avoid leaving sockets open which can trigger a ResourceWarning in some\x1b[39;00m\n\x1b[1;32m     57\x1b[0m \x1b[38;5;66;03m# cases, and look like a memory leak in others.\x1b[39;00m\n\x1b[1;32m     58\x1b[0m \x1b[38;5;28;01mwith\x1b[39;00m sessions\x1b[38;5;241m.\x1b[39mSession() \x1b[38;5;28;01mas\x1b[39;00m session:\n\x1b[0;32m---> 59\x1b[0m     \x1b[38;5;28;01mreturn\x1b[39;00m \x1b[43msession\x1b[49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mrequest\x1b[49m\x1b[43m(\x1b[49m\x1b[43mmethod\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mmethod\x1b[49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[43murl\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43murl\x1b[49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[43mkwargs\x1b[49m\x1b[43m)\x1b[49m\n\nFile \x1b[0;32m~/.local/lib/python3.10/site-packages/requests/sessions.py:589\x1b[0m, in \x1b[0;36mSession.request\x1b[0;34m(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)\x1b[0m\n\x1b[1;32m    584\x1b[0m send_kwargs \x1b[38;5;241m=\x1b[39m {\n\x1b[1;32m    585\x1b[0m     \x1b[38;5;124m"\x1b[39m\x1b[38;5;124mtimeout\x1b[39m\x1b[38;5;124m"\x1b[39m: timeout,\n\x1b[1;32m    586\x1b[0m     \x1b[38;5;124m"\x1b[39m\x1b[38;5;124mallow_redirects\x1b[39m\x1b[38;5;124m"\x1b[39m: allow_redirects,\n\x1b[1;32m    587\x1b[0m }\n\x1b[1;32m    588\x1b[0m send_kwargs\x1b[38;5;241m.\x1b[39mupdate(settings)\n\x1b[0;32m--> 589\x1b[0m resp \x1b[38;5;241m=\x1b[39m \x1b[38;5;28;43mself\x1b[39;49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43msend\x1b[49m\x1b[43m(\x1b[49m\x1b[43mprep\x1b[49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[43msend_kwargs\x1b[49m\x1b[43m)\x1b[49m\n\x1b[1;32m    591\x1b[0m \x1b[38;5;28;01mreturn\x1b[39;00m resp\n\nFile \x1b[0;32m~/.local/lib/python3.10/site-packages/requests/sessions.py:703\x1b[0m, in \x1b[0;36mSession.send\x1b[0;34m(self, request, **kwargs)\x1b[0m\n\x1b[1;32m    700\x1b[0m start \x1b[38;5;241m=\x1b[39m preferred_clock()\n\x1b[1;32m    702\x1b[0m \x1b[38;5;66;03m# Send the request\x1b[39;00m\n\x1b[0;32m--> 703\x1b[0m r \x1b[38;5;241m=\x1b[39m \x1b[43madapter\x1b[49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43msend\x1b[49m\x1b[43m(\x1b[49m\x1b[43mrequest\x1b[49m\x1b[43m,\x1b[49m\x1b[43m \x1b[49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[43mkwargs\x1b[49m\x1b[43m)\x1b[49m\n\x1b[1;32m    705\x1b[0m \x1b[38;5;66;03m# Total elapsed time of the request (approximately)\x1b[39;00m\n\x1b[1;32m    706\x1b[0m elapsed \x1b[38;5;241m=\x1b[39m preferred_clock() \x1b[38;5;241m-\x1b[39m start\n\nFile \x1b[0;32m~/.local/lib/python3.10/site-packages/requests/adapters.py:486\x1b[0m, in \x1b[0;36mHTTPAdapter.send\x1b[0;34m(self, request, stream, timeout, verify, cert, proxies)\x1b[0m\n\x1b[1;32m    483\x1b[0m     timeout \x1b[38;5;241m=\x1b[39m TimeoutSauce(connect\x1b[38;5;241m=\x1b[39mtimeout, read\x1b[38;5;241m=\x1b[39mtimeout)\n\x1b[1;32m    485\x1b[0m \x1b[38;5;28;01mtry\x1b[39;00m:\n\x1b[0;32m--> 486\x1b[0m     resp \x1b[38;5;241m=\x1b[39m \x1b[43mconn\x1b[49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43murlopen\x1b[49m\x1b[43m(\x1b[49m\n\x1b[1;32m    487\x1b[0m \x1b[43m        \x1b[49m\x1b[43mmethod\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mrequest\x1b[49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mmethod\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    488\x1b[0m \x1b[43m        \x1b[49m\x1b[43murl\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43murl\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    489\x1b[0m \x1b[43m        \x1b[49m\x1b[43mbody\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mrequest\x1b[49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mbody\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    490\x1b[0m \x1b[43m        \x1b[49m\x1b[43mheaders\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mrequest\x1b[49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mheaders\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    491\x1b[0m \x1b[43m        \x1b[49m\x1b[43mredirect\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[38;5;28;43;01mFalse\x1b[39;49;00m\x1b[43m,\x1b[49m\n\x1b[1;32m    492\x1b[0m \x1b[43m        \x1b[49m\x1b[43massert_same_host\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[38;5;28;43;01mFalse\x1b[39;49;00m\x1b[43m,\x1b[49m\n\x1b[1;32m    493\x1b[0m \x1b[43m        \x1b[49m\x1b[43mpreload_content\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[38;5;28;43;01mFalse\x1b[39;49;00m\x1b[43m,\x1b[49m\n\x1b[1;32m    494\x1b[0m \x1b[43m        \x1b[49m\x1b[43mdecode_content\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[38;5;28;43;01mFalse\x1b[39;49;00m\x1b[43m,\x1b[49m\n\x1b[1;32m    495\x1b[0m \x1b[43m        \x1b[49m\x1b[43mretries\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[38;5;28;43mself\x1b[39;49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mmax_retries\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    496\x1b[0m \x1b[43m        \x1b[49m\x1b[43mtimeout\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mtimeout\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    497\x1b[0m \x1b[43m        \x1b[49m\x1b[43mchunked\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mchunked\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    498\x1b[0m \x1b[43m    \x1b[49m\x1b[43m)\x1b[49m\n\x1b[1;32m    500\x1b[0m \x1b[38;5;28;01mexcept\x1b[39;00m (ProtocolError, \x1b[38;5;167;01mOSError\x1b[39;00m) \x1b[38;5;28;01mas\x1b[39;00m err:\n\x1b[1;32m    501\x1b[0m     \x1b[38;5;28;01mraise\x1b[39;00m \x1b[38;5;167;01mConnectionError\x1b[39;00m(err, request\x1b[38;5;241m=\x1b[39mrequest)\n\nFile \x1b[0;32m~/.local/lib/python3.10/site-packages/urllib3/connectionpool.py:793\x1b[0m, in \x1b[0;36mHTTPConnectionPool.urlopen\x1b[0;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)\x1b[0m\n\x1b[1;32m    790\x1b[0m response_conn \x1b[38;5;241m=\x1b[39m conn \x1b[38;5;28;01mif\x1b[39;00m \x1b[38;5;129;01mnot\x1b[39;00m release_conn \x1b[38;5;28;01melse\x1b[39;00m \x1b[38;5;28;01mNone\x1b[39;00m\n\x1b[1;32m    792\x1b[0m \x1b[38;5;66;03m# Make the request on the HTTPConnection object\x1b[39;00m\n\x1b[0;32m--> 793\x1b[0m response \x1b[38;5;241m=\x1b[39m \x1b[38;5;28;43mself\x1b[39;49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43m_make_request\x1b[49m\x1b[43m(\x1b[49m\n\x1b[1;32m    794\x1b[0m \x1b[43m    \x1b[49m\x1b[43mconn\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    795\x1b[0m \x1b[43m    \x1b[49m\x1b[43mmethod\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    796\x1b[0m \x1b[43m    \x1b[49m\x1b[43murl\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    797\x1b[0m \x1b[43m    \x1b[49m\x1b[43mtimeout\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mtimeout_obj\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    798\x1b[0m \x1b[43m    \x1b[49m\x1b[43mbody\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mbody\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    799\x1b[0m \x1b[43m    \x1b[49m\x1b[43mheaders\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mheaders\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    800\x1b[0m \x1b[43m    \x1b[49m\x1b[43mchunked\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mchunked\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    801\x1b[0m \x1b[43m    \x1b[49m\x1b[43mretries\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mretries\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    802\x1b[0m \x1b[43m    \x1b[49m\x1b[43mresponse_conn\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mresponse_conn\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    803\x1b[0m \x1b[43m    \x1b[49m\x1b[43mpreload_content\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mpreload_content\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    804\x1b[0m \x1b[43m    \x1b[49m\x1b[43mdecode_content\x1b[49m\x1b[38;5;241;43m=\x1b[39;49m\x1b[43mdecode_content\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    805\x1b[0m \x1b[43m    \x1b[49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[38;5;241;43m*\x1b[39;49m\x1b[43mresponse_kw\x1b[49m\x1b[43m,\x1b[49m\n\x1b[1;32m    806\x1b[0m \x1b[43m\x1b[49m\x1b[43m)\x1b[49m\n\x1b[1;32m    808\x1b[0m \x1b[38;5;66;03m# Everything went great!\x1b[39;00m\n\x1b[1;32m    809\x1b[0m clean_exit \x1b[38;5;241m=\x1b[39m \x1b[38;5;28;01mTrue\x1b[39;00m\n\nFile \x1b[0;32m~/.local/lib/python3.10/site-packages/urllib3/connectionpool.py:537\x1b[0m, in \x1b[0;36mHTTPConnectionPool._make_request\x1b[0;34m(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)\x1b[0m\n\x1b[1;32m    535\x1b[0m \x1b[38;5;66;03m# Receive the response from the server\x1b[39;00m\n\x1b[1;32m    536\x1b[0m \x1b[38;5;28;01mtry\x1b[39;00m:\n\x1b[0;32m--> 537\x1b[0m     response \x1b[38;5;241m=\x1b[39m \x1b[43mconn\x1b[49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mgetresponse\x1b[49m\x1b[43m(\x1b[49m\x1b[43m)\x1b[49m\n\x1b[1;32m    538\x1b[0m \x1b[38;5;28;01mexcept\x1b[39;00m (BaseSSLError, \x1b[38;5;167;01mOSError\x1b[39;00m) \x1b[38;5;28;01mas\x1b[39;00m e:\n\x1b[1;32m    539\x1b[0m     \x1b[38;5;28mself\x1b[39m\x1b[38;5;241m.\x1b[39m_raise_timeout(err\x1b[38;5;241m=\x1b[39me, url\x1b[38;5;241m=\x1b[39murl, timeout_value\x1b[38;5;241m=\x1b[39mread_timeout)\n\nFile \x1b[0;32m~/.local/lib/python3.10/site-packages/urllib3/connection.py:466\x1b[0m, in \x1b[0;36mHTTPConnection.getresponse\x1b[0;34m(self)\x1b[0m\n\x1b[1;32m    463\x1b[0m \x1b[38;5;28;01mfrom\x1b[39;00m \x1b[38;5;21;01m.\x1b[39;00m\x1b[38;5;21;01mresponse\x1b[39;00m \x1b[38;5;28;01mimport\x1b[39;00m HTTPResponse\n\x1b[1;32m    465\x1b[0m \x1b[38;5;66;03m# Get the response from http.client.HTTPConnection\x1b[39;00m\n\x1b[0;32m--> 466\x1b[0m httplib_response \x1b[38;5;241m=\x1b[39m \x1b[38;5;28;43msuper\x1b[39;49m\x1b[43m(\x1b[49m\x1b[43m)\x1b[49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mgetresponse\x1b[49m\x1b[43m(\x1b[49m\x1b[43m)\x1b[49m\n\x1b[1;32m    468\x1b[0m \x1b[38;5;28;01mtry\x1b[39;00m:\n\x1b[1;32m    469\x1b[0m     assert_header_parsing(httplib_response\x1b[38;5;241m.\x1b[39mmsg)\n\nFile \x1b[0;32m/opt/anaconda3/envs/ragllama/lib/python3.10/http/client.py:1375\x1b[0m, in \x1b[0;36mHTTPConnection.getresponse\x1b[0;34m(self)\x1b[0m\n\x1b[1;32m   1373\x1b[0m \x1b[38;5;28;01mtry\x1b[39;00m:\n\x1b[1;32m   1374\x1b[0m     \x1b[38;5;28;01mtry\x1b[39;00m:\n\x1b[0;32m-> 1375\x1b[0m         \x1b[43mresponse\x1b[49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mbegin\x1b[49m\x1b[43m(\x1b[49m\x1b[43m)\x1b[49m\n\x1b[1;32m   1376\x1b[0m     \x1b[38;5;28;01mexcept\x1b[39;00m \x1b[38;5;167;01mConnectionError\x1b[39;00m:\n\x1b[1;32m   1377\x1b[0m         \x1b[38;5;28mself\x1b[39m\x1b[38;5;241m.\x1b[39mclose()\n\nFile \x1b[0;32m/opt/anaconda3/envs/ragllama/lib/python3.10/http/client.py:318\x1b[0m, in \x1b[0;36mHTTPResponse.begin\x1b[0;34m(self)\x1b[0m\n\x1b[1;32m    316\x1b[0m \x1b[38;5;66;03m# read until we get a non-100 response\x1b[39;00m\n\x1b[1;32m    317\x1b[0m \x1b[38;5;28;01mwhile\x1b[39;00m \x1b[38;5;28;01mTrue\x1b[39;00m:\n\x1b[0;32m--> 318\x1b[0m     version, status, reason \x1b[38;5;241m=\x1b[39m \x1b[38;5;28;43mself\x1b[39;49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43m_read_status\x1b[49m\x1b[43m(\x1b[49m\x1b[43m)\x1b[49m\n\x1b[1;32m    319\x1b[0m     \x1b[38;5;28;01mif\x1b[39;00m status \x1b[38;5;241m!=\x1b[39m CONTINUE:\n\x1b[1;32m    320\x1b[0m         \x1b[38;5;28;01mbreak\x1b[39;00m\n\nFile \x1b[0;32m/opt/anaconda3/envs/ragllama/lib/python3.10/http/client.py:279\x1b[0m, in \x1b[0;36mHTTPResponse._read_status\x1b[0;34m(self)\x1b[0m\n\x1b[1;32m    278\x1b[0m \x1b[38;5;28;01mdef\x1b[39;00m \x1b[38;5;21m_read_status\x1b[39m(\x1b[38;5;28mself\x1b[39m):\n\x1b[0;32m--> 279\x1b[0m     line \x1b[38;5;241m=\x1b[39m \x1b[38;5;28mstr\x1b[39m(\x1b[38;5;28;43mself\x1b[39;49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mfp\x1b[49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mreadline\x1b[49m\x1b[43m(\x1b[49m\x1b[43m_MAXLINE\x1b[49m\x1b[43m \x1b[49m\x1b[38;5;241;43m+\x1b[39;49m\x1b[43m \x1b[49m\x1b[38;5;241;43m1\x1b[39;49m\x1b[43m)\x1b[49m, \x1b[38;5;124m"\x1b[39m\x1b[38;5;124miso-8859-1\x1b[39m\x1b[38;5;124m"\x1b[39m)\n\x1b[1;32m    280\x1b[0m     \x1b[38;5;28;01mif\x1b[39;00m \x1b[38;5;28mlen\x1b[39m(line) \x1b[38;5;241m>\x1b[39m _MAXLINE:\n\x1b[1;32m    281\x1b[0m         \x1b[38;5;28;01mraise\x1b[39;00m LineTooLong(\x1b[38;5;124m"\x1b[39m\x1b[38;5;124mstatus line\x1b[39m\x1b[38;5;124m"\x1b[39m)\n\nFile \x1b[0;32m/opt/anaconda3/envs/ragllama/lib/python3.10/socket.py:705\x1b[0m, in \x1b[0;36mSocketIO.readinto\x1b[0;34m(self, b)\x1b[0m\n\x1b[1;32m    703\x1b[0m \x1b[38;5;28;01mwhile\x1b[39;00m \x1b[38;5;28;01mTrue\x1b[39;00m:\n\x1b[1;32m    704\x1b[0m     \x1b[38;5;28;01mtry\x1b[39;00m:\n\x1b[0;32m--> 705\x1b[0m         \x1b[38;5;28;01mreturn\x1b[39;00m \x1b[38;5;28;43mself\x1b[39;49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43m_sock\x1b[49m\x1b[38;5;241;43m.\x1b[39;49m\x1b[43mrecv_into\x1b[49m\x1b[43m(\x1b[49m\x1b[43mb\x1b[49m\x1b[43m)\x1b[49m\n\x1b[1;32m    706\x1b[0m     \x1b[38;5;28;01mexcept\x1b[39;00m timeout:\n\x1b[1;32m    707\x1b[0m         \x1b[38;5;28mself\x1b[39m\x1b[38;5;241m.\x1b[39m_timeout_occurred \x1b[38;5;241m=\x1b[39m \x1b[38;5;28;01mTrue\x1b[39;00m\n\n\x1b[0;31mKeyboardInterrupt\x1b[0m: \n')>
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/ragllama/bin/jupyter-nbconvert", line 11, in <module>
+    sys.exit(main())
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/jupyter_core/application.py", line 280, in launch_instance
+    super().launch_instance(argv=argv, **kwargs)
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/traitlets/config/application.py", line 992, in launch_instance
+    app.start()
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/nbconvertapp.py", line 412, in start
+    self.convert_notebooks()
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/nbconvertapp.py", line 590, in convert_notebooks
+    self.convert_single_notebook(notebook_filename)
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/nbconvertapp.py", line 556, in convert_single_notebook
+    output, resources = self.export_single_notebook(
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/nbconvertapp.py", line 479, in export_single_notebook
+    output, resources = self.exporter.from_filename(
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/exporters/exporter.py", line 203, in from_filename
+    return self.from_file(f, resources=resources, **kw)
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/exporters/exporter.py", line 222, in from_file
+    return self.from_notebook_node(
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/exporters/notebook.py", line 36, in from_notebook_node
+    nb_copy, resources = super().from_notebook_node(nb, resources, **kw)
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/exporters/exporter.py", line 156, in from_notebook_node
+    nb_copy, resources = self._preprocess(nb_copy, resources)
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/exporters/exporter.py", line 354, in _preprocess
+    nbc, resc = preprocessor(nbc, resc)  # type:ignore[operator]
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/preprocessors/base.py", line 48, in __call__
+    return self.preprocess(nb, resources)
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/preprocessors/execute.py", line 102, in preprocess
+    self.preprocess_cell(cell, resources, index)
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbconvert/preprocessors/execute.py", line 123, in preprocess_cell
+    cell = self.execute_cell(cell, index, store_history=True)
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
+    return loop.run_until_complete(inner)
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete
+    self.run_forever()
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/asyncio/base_events.py", line 603, in run_forever
+    self._run_once()
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/asyncio/base_events.py", line 1871, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/selectors.py", line 469, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/anaconda3/envs/ragllama/lib/python3.10/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import pandas as pd
+from tqdm.notebook import tqdm
+
+total = sum(len(sentences) for national_list in augmented_sentence.values() for keywords in national_list.values() for sentences in keywords.values())
+
+df_list = []
+
+with tqdm(total=total, desc="Overall Progress") as pbar:
+    # 여기서 augmented_sentence, keyword_assertions, chain, query는 이미 정의되어 있다고 가정합니다.
+    for facet, national_list in augmented_sentence.items():
+        for national, keywords in national_list.items():
+            for keyword, aug_sentences in keywords.items():
+                for aug_sentence in aug_sentences:
+                    sentence = aug_sentence
+                    assertions = keyword_assertions[keyword]
+
+                    results = chain.invoke({"sentence": sentence, "information": assertions, "query": query})                
+                    final_augmented = results.split('\n')[-1]
+
+                    df_list.append({
+                        'facet': facet, 
+                        'national': national, 
+                        'keyword': keyword, 
+                        'final_augmented': final_augmented, 
+                        'result': results
+                    })
+
+                    pbar.update(1)
+
+
+df = pd.DataFrame(df_list)
+
+df.to_excel('final_augmented_sentence.xlsx', index=False)
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mKeyboardInterrupt[0m                         Traceback (most recent call last)
+Cell [0;32mIn[7], line 17[0m
+[1;32m     14[0m sentence [38;5;241m=[39m aug_sentence
+[1;32m     15[0m assertions [38;5;241m=[39m keyword_assertions[keyword]
+[0;32m---> 17[0m results [38;5;241m=[39m [43mchain[49m[38;5;241;43m.[39;49m[43minvoke[49m[43m([49m[43m{[49m[38;5;124;43m"[39;49m[38;5;124;43msentence[39;49m[38;5;124;43m"[39;49m[43m:[49m[43m [49m[43msentence[49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43minformation[39;49m[38;5;124;43m"[39;49m[43m:[49m[43m [49m[43massertions[49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mquery[39;49m[38;5;124;43m"[39;49m[43m:[49m[43m [49m[43mquery[49m[43m}[49m[43m)[49m                
+[1;32m     18[0m final_augmented [38;5;241m=[39m results[38;5;241m.[39msplit([38;5;124m'[39m[38;5;130;01m\n[39;00m[38;5;124m'[39m)[[38;5;241m-[39m[38;5;241m1[39m]
+[1;32m     20[0m df_list[38;5;241m.[39mappend({
+[1;32m     21[0m     [38;5;124m'[39m[38;5;124mfacet[39m[38;5;124m'[39m: facet, 
+[1;32m     22[0m     [38;5;124m'[39m[38;5;124mnational[39m[38;5;124m'[39m: national, 
+[0;32m   (...)[0m
+[1;32m     25[0m     [38;5;124m'[39m[38;5;124mresult[39m[38;5;124m'[39m: results
+[1;32m     26[0m })
+
+File [0;32m~/.local/lib/python3.10/site-packages/langchain_core/runnables/base.py:2368[0m, in [0;36mRunnableSequence.invoke[0;34m(self, input, config)[0m
+[1;32m   2366[0m [38;5;28;01mtry[39;00m:
+[1;32m   2367[0m     [38;5;28;01mfor[39;00m i, step [38;5;129;01min[39;00m [38;5;28menumerate[39m([38;5;28mself[39m[38;5;241m.[39msteps):
+[0;32m-> 2368[0m         [38;5;28minput[39m [38;5;241m=[39m [43mstep[49m[38;5;241;43m.[39;49m[43minvoke[49m[43m([49m
+[1;32m   2369[0m [43m            [49m[38;5;28;43minput[39;49m[43m,[49m
+[1;32m   2370[0m [43m            [49m[38;5;66;43;03m# mark each step as a child run[39;49;00m
+[1;32m   2371[0m [43m            [49m[43mpatch_config[49m[43m([49m
+[1;32m   2372[0m [43m                [49m[43mconfig[49m[43m,[49m[43m [49m[43mcallbacks[49m[38;5;241;43m=[39;49m[43mrun_manager[49m[38;5;241;43m.[39;49m[43mget_child[49m[43m([49m[38;5;124;43mf[39;49m[38;5;124;43m"[39;49m[38;5;124;43mseq:step:[39;49m[38;5;132;43;01m{[39;49;00m[43mi[49m[38;5;241;43m+[39;49m[38;5;241;43m1[39;49m[38;5;132;43;01m}[39;49;00m[38;5;124;43m"[39;49m[43m)[49m
+[1;32m   2373[0m [43m            [49m[43m)[49m[43m,[49m
+[1;32m   2374[0m [43m        [49m[43m)[49m
+[1;32m   2375[0m [38;5;66;03m# finish the root run[39;00m
+[1;32m   2376[0m [38;5;28;01mexcept[39;00m [38;5;167;01mBaseException[39;00m [38;5;28;01mas[39;00m e:
+
+File [0;32m~/.local/lib/python3.10/site-packages/langchain_core/language_models/chat_models.py:170[0m, in [0;36mBaseChatModel.invoke[0;34m(self, input, config, stop, **kwargs)[0m
+[1;32m    159[0m [38;5;28;01mdef[39;00m [38;5;21minvoke[39m(
+[1;32m    160[0m     [38;5;28mself[39m,
+[1;32m    161[0m     [38;5;28minput[39m: LanguageModelInput,
+[0;32m   (...)[0m
+[1;32m    165[0m     [38;5;241m*[39m[38;5;241m*[39mkwargs: Any,
+[1;32m    166[0m ) [38;5;241m-[39m[38;5;241m>[39m BaseMessage:
+[1;32m    167[0m     config [38;5;241m=[39m ensure_config(config)
+[1;32m    168[0m     [38;5;28;01mreturn[39;00m cast(
+[1;32m    169[0m         ChatGeneration,
+[0;32m--> 170[0m         [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mgenerate_prompt[49m[43m([49m
+[1;32m    171[0m [43m            [49m[43m[[49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_convert_input[49m[43m([49m[38;5;28;43minput[39;49m[43m)[49m[43m][49m[43m,[49m
+[1;32m    172[0m [43m            [49m[43mstop[49m[38;5;241;43m=[39;49m[43mstop[49m[43m,[49m
+[1;32m    173[0m [43m            [49m[43mcallbacks[49m[38;5;241;43m=[39;49m[43mconfig[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mcallbacks[39;49m[38;5;124;43m"[39;49m[43m)[49m[43m,[49m
+[1;32m    174[0m [43m            [49m[43mtags[49m[38;5;241;43m=[39;49m[43mconfig[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mtags[39;49m[38;5;124;43m"[39;49m[43m)[49m[43m,[49m
+[1;32m    175[0m [43m            [49m[43mmetadata[49m[38;5;241;43m=[39;49m[43mconfig[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mmetadata[39;49m[38;5;124;43m"[39;49m[43m)[49m[43m,[49m
+[1;32m    176[0m [43m            [49m[43mrun_name[49m[38;5;241;43m=[39;49m[43mconfig[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mrun_name[39;49m[38;5;124;43m"[39;49m[43m)[49m[43m,[49m
+[1;32m    177[0m [43m            [49m[43mrun_id[49m[38;5;241;43m=[39;49m[43mconfig[49m[38;5;241;43m.[39;49m[43mpop[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mrun_id[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;28;43;01mNone[39;49;00m[43m)[49m[43m,[49m
+[1;32m    178[0m [43m            [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m,[49m
+[1;32m    179[0m [43m        [49m[43m)[49m[38;5;241m.[39mgenerations[[38;5;241m0[39m][[38;5;241m0[39m],
+[1;32m    180[0m     )[38;5;241m.[39mmessage
+
+File [0;32m~/.local/lib/python3.10/site-packages/langchain_core/language_models/chat_models.py:599[0m, in [0;36mBaseChatModel.generate_prompt[0;34m(self, prompts, stop, callbacks, **kwargs)[0m
+[1;32m    591[0m [38;5;28;01mdef[39;00m [38;5;21mgenerate_prompt[39m(
+[1;32m    592[0m     [38;5;28mself[39m,
+[1;32m    593[0m     prompts: List[PromptValue],
+[0;32m   (...)[0m
+[1;32m    596[0m     [38;5;241m*[39m[38;5;241m*[39mkwargs: Any,
+[1;32m    597[0m ) [38;5;241m-[39m[38;5;241m>[39m LLMResult:
+[1;32m    598[0m     prompt_messages [38;5;241m=[39m [p[38;5;241m.[39mto_messages() [38;5;28;01mfor[39;00m p [38;5;129;01min[39;00m prompts]
+[0;32m--> 599[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mgenerate[49m[43m([49m[43mprompt_messages[49m[43m,[49m[43m [49m[43mstop[49m[38;5;241;43m=[39;49m[43mstop[49m[43m,[49m[43m [49m[43mcallbacks[49m[38;5;241;43m=[39;49m[43mcallbacks[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m~/.local/lib/python3.10/site-packages/langchain_core/language_models/chat_models.py:456[0m, in [0;36mBaseChatModel.generate[0;34m(self, messages, stop, callbacks, tags, metadata, run_name, run_id, **kwargs)[0m
+[1;32m    454[0m         [38;5;28;01mif[39;00m run_managers:
+[1;32m    455[0m             run_managers[i][38;5;241m.[39mon_llm_error(e, response[38;5;241m=[39mLLMResult(generations[38;5;241m=[39m[]))
+[0;32m--> 456[0m         [38;5;28;01mraise[39;00m e
+[1;32m    457[0m flattened_outputs [38;5;241m=[39m [
+[1;32m    458[0m     LLMResult(generations[38;5;241m=[39m[res[38;5;241m.[39mgenerations], llm_output[38;5;241m=[39mres[38;5;241m.[39mllm_output)  [38;5;66;03m# type: ignore[list-item][39;00m
+[1;32m    459[0m     [38;5;28;01mfor[39;00m res [38;5;129;01min[39;00m results
+[1;32m    460[0m ]
+[1;32m    461[0m llm_output [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_combine_llm_outputs([res[38;5;241m.[39mllm_output [38;5;28;01mfor[39;00m res [38;5;129;01min[39;00m results])
+
+File [0;32m~/.local/lib/python3.10/site-packages/langchain_core/language_models/chat_models.py:446[0m, in [0;36mBaseChatModel.generate[0;34m(self, messages, stop, callbacks, tags, metadata, run_name, run_id, **kwargs)[0m
+[1;32m    443[0m [38;5;28;01mfor[39;00m i, m [38;5;129;01min[39;00m [38;5;28menumerate[39m(messages):
+[1;32m    444[0m     [38;5;28;01mtry[39;00m:
+[1;32m    445[0m         results[38;5;241m.[39mappend(
+[0;32m--> 446[0m             [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_generate_with_cache[49m[43m([49m
+[1;32m    447[0m [43m                [49m[43mm[49m[43m,[49m
+[1;32m    448[0m [43m                [49m[43mstop[49m[38;5;241;43m=[39;49m[43mstop[49m[43m,[49m
+[1;32m    449[0m [43m                [49m[43mrun_manager[49m[38;5;241;43m=[39;49m[43mrun_managers[49m[43m[[49m[43mi[49m[43m][49m[43m [49m[38;5;28;43;01mif[39;49;00m[43m [49m[43mrun_managers[49m[43m [49m[38;5;28;43;01melse[39;49;00m[43m [49m[38;5;28;43;01mNone[39;49;00m[43m,[49m
+[1;32m    450[0m [43m                [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m,[49m
+[1;32m    451[0m [43m            [49m[43m)[49m
+[1;32m    452[0m         )
+[1;32m    453[0m     [38;5;28;01mexcept[39;00m [38;5;167;01mBaseException[39;00m [38;5;28;01mas[39;00m e:
+[1;32m    454[0m         [38;5;28;01mif[39;00m run_managers:
+
+File [0;32m~/.local/lib/python3.10/site-packages/langchain_core/language_models/chat_models.py:671[0m, in [0;36mBaseChatModel._generate_with_cache[0;34m(self, messages, stop, run_manager, **kwargs)[0m
+[1;32m    669[0m [38;5;28;01melse[39;00m:
+[1;32m    670[0m     [38;5;28;01mif[39;00m inspect[38;5;241m.[39msignature([38;5;28mself[39m[38;5;241m.[39m_generate)[38;5;241m.[39mparameters[38;5;241m.[39mget([38;5;124m"[39m[38;5;124mrun_manager[39m[38;5;124m"[39m):
+[0;32m--> 671[0m         result [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_generate[49m[43m([49m
+[1;32m    672[0m [43m            [49m[43mmessages[49m[43m,[49m[43m [49m[43mstop[49m[38;5;241;43m=[39;49m[43mstop[49m[43m,[49m[43m [49m[43mrun_manager[49m[38;5;241;43m=[39;49m[43mrun_manager[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m
+[1;32m    673[0m [43m        [49m[43m)[49m
+[1;32m    674[0m     [38;5;28;01melse[39;00m:
+[1;32m    675[0m         result [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_generate(messages, stop[38;5;241m=[39mstop, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+
+File [0;32m~/.local/lib/python3.10/site-packages/langchain_community/chat_models/ollama.py:259[0m, in [0;36mChatOllama._generate[0;34m(self, messages, stop, run_manager, **kwargs)[0m
+[1;32m    235[0m [38;5;28;01mdef[39;00m [38;5;21m_generate[39m(
+[1;32m    236[0m     [38;5;28mself[39m,
+[1;32m    237[0m     messages: List[BaseMessage],
+[0;32m   (...)[0m
+[1;32m    240[0m     [38;5;241m*[39m[38;5;241m*[39mkwargs: Any,
+[1;32m    241[0m ) [38;5;241m-[39m[38;5;241m>[39m ChatResult:
+[1;32m    242[0m [38;5;250m    [39m[38;5;124;03m"""Call out to Ollama's generate endpoint.[39;00m
+[1;32m    243[0m 
+[1;32m    244[0m [38;5;124;03m    Args:[39;00m
+[0;32m   (...)[0m
+[1;32m    256[0m [38;5;124;03m            ])[39;00m
+[1;32m    257[0m [38;5;124;03m    """[39;00m
+[0;32m--> 259[0m     final_chunk [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_chat_stream_with_aggregation[49m[43m([49m
+[1;32m    260[0m [43m        [49m[43mmessages[49m[43m,[49m
+[1;32m    261[0m [43m        [49m[43mstop[49m[38;5;241;43m=[39;49m[43mstop[49m[43m,[49m
+[1;32m    262[0m [43m        [49m[43mrun_manager[49m[38;5;241;43m=[39;49m[43mrun_manager[49m[43m,[49m
+[1;32m    263[0m [43m        [49m[43mverbose[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mverbose[49m[43m,[49m
+[1;32m    264[0m [43m        [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m,[49m
+[1;32m    265[0m [43m    [49m[43m)[49m
+[1;32m    266[0m     chat_generation [38;5;241m=[39m ChatGeneration(
+[1;32m    267[0m         message[38;5;241m=[39mAIMessage(content[38;5;241m=[39mfinal_chunk[38;5;241m.[39mtext),
+[1;32m    268[0m         generation_info[38;5;241m=[39mfinal_chunk[38;5;241m.[39mgeneration_info,
+[1;32m    269[0m     )
+[1;32m    270[0m     [38;5;28;01mreturn[39;00m ChatResult(generations[38;5;241m=[39m[chat_generation])
+
+File [0;32m~/.local/lib/python3.10/site-packages/langchain_community/chat_models/ollama.py:190[0m, in [0;36mChatOllama._chat_stream_with_aggregation[0;34m(self, messages, stop, run_manager, verbose, **kwargs)[0m
+[1;32m    181[0m [38;5;28;01mdef[39;00m [38;5;21m_chat_stream_with_aggregation[39m(
+[1;32m    182[0m     [38;5;28mself[39m,
+[1;32m    183[0m     messages: List[BaseMessage],
+[0;32m   (...)[0m
+[1;32m    187[0m     [38;5;241m*[39m[38;5;241m*[39mkwargs: Any,
+[1;32m    188[0m ) [38;5;241m-[39m[38;5;241m>[39m ChatGenerationChunk:
+[1;32m    189[0m     final_chunk: Optional[ChatGenerationChunk] [38;5;241m=[39m [38;5;28;01mNone[39;00m
+[0;32m--> 190[0m     [38;5;28;01mfor[39;00m stream_resp [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39m_create_chat_stream(messages, stop, [38;5;241m*[39m[38;5;241m*[39mkwargs):
+[1;32m    191[0m         [38;5;28;01mif[39;00m stream_resp:
+[1;32m    192[0m             chunk [38;5;241m=[39m _chat_stream_response_to_chat_generation_chunk(stream_resp)
+
+File [0;32m~/.local/lib/python3.10/site-packages/langchain_community/chat_models/ollama.py:162[0m, in [0;36mChatOllama._create_chat_stream[0;34m(self, messages, stop, **kwargs)[0m
+[1;32m    152[0m [38;5;28;01mdef[39;00m [38;5;21m_create_chat_stream[39m(
+[1;32m    153[0m     [38;5;28mself[39m,
+[1;32m    154[0m     messages: List[BaseMessage],
+[1;32m    155[0m     stop: Optional[List[[38;5;28mstr[39m]] [38;5;241m=[39m [38;5;28;01mNone[39;00m,
+[1;32m    156[0m     [38;5;241m*[39m[38;5;241m*[39mkwargs: Any,
+[1;32m    157[0m ) [38;5;241m-[39m[38;5;241m>[39m Iterator[[38;5;28mstr[39m]:
+[1;32m    158[0m     payload [38;5;241m=[39m {
+[1;32m    159[0m         [38;5;124m"[39m[38;5;124mmodel[39m[38;5;124m"[39m: [38;5;28mself[39m[38;5;241m.[39mmodel,
+[1;32m    160[0m         [38;5;124m"[39m[38;5;124mmessages[39m[38;5;124m"[39m: [38;5;28mself[39m[38;5;241m.[39m_convert_messages_to_ollama_messages(messages),
+[1;32m    161[0m     }
+[0;32m--> 162[0m     [38;5;28;01myield from[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_create_stream[49m[43m([49m
+[1;32m    163[0m [43m        [49m[43mpayload[49m[38;5;241;43m=[39;49m[43mpayload[49m[43m,[49m[43m [49m[43mstop[49m[38;5;241;43m=[39;49m[43mstop[49m[43m,[49m[43m [49m[43mapi_url[49m[38;5;241;43m=[39;49m[38;5;124;43mf[39;49m[38;5;124;43m"[39;49m[38;5;132;43;01m{[39;49;00m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mbase_url[49m[38;5;132;43;01m}[39;49;00m[38;5;124;43m/api/chat[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m
+[1;32m    164[0m [43m    [49m[43m)[49m
+
+File [0;32m~/.local/lib/python3.10/site-packages/langchain_community/llms/ollama.py:231[0m, in [0;36m_OllamaCommon._create_stream[0;34m(self, api_url, payload, stop, **kwargs)[0m
+[1;32m    224[0m [38;5;28;01melse[39;00m:
+[1;32m    225[0m     request_payload [38;5;241m=[39m {
+[1;32m    226[0m         [38;5;124m"[39m[38;5;124mprompt[39m[38;5;124m"[39m: payload[38;5;241m.[39mget([38;5;124m"[39m[38;5;124mprompt[39m[38;5;124m"[39m),
+[1;32m    227[0m         [38;5;124m"[39m[38;5;124mimages[39m[38;5;124m"[39m: payload[38;5;241m.[39mget([38;5;124m"[39m[38;5;124mimages[39m[38;5;124m"[39m, []),
+[1;32m    228[0m         [38;5;241m*[39m[38;5;241m*[39mparams,
+[1;32m    229[0m     }
+[0;32m--> 231[0m response [38;5;241m=[39m [43mrequests[49m[38;5;241;43m.[39;49m[43mpost[49m[43m([49m
+[1;32m    232[0m [43m    [49m[43murl[49m[38;5;241;43m=[39;49m[43mapi_url[49m[43m,[49m
+[1;32m    233[0m [43m    [49m[43mheaders[49m[38;5;241;43m=[39;49m[43m{[49m
+[1;32m    234[0m [43m        [49m[38;5;124;43m"[39;49m[38;5;124;43mContent-Type[39;49m[38;5;124;43m"[39;49m[43m:[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mapplication/json[39;49m[38;5;124;43m"[39;49m[43m,[49m
+[1;32m    235[0m [43m        [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mheaders[49m[43m [49m[38;5;28;43;01mif[39;49;00m[43m [49m[38;5;28;43misinstance[39;49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mheaders[49m[43m,[49m[43m [49m[38;5;28;43mdict[39;49m[43m)[49m[43m [49m[38;5;28;43;01melse[39;49;00m[43m [49m[43m{[49m[43m}[49m[43m)[49m[43m,[49m
+[1;32m    236[0m [43m    [49m[43m}[49m[43m,[49m
+[1;32m    237[0m [43m    [49m[43mjson[49m[38;5;241;43m=[39;49m[43mrequest_payload[49m[43m,[49m
+[1;32m    238[0m [43m    [49m[43mstream[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m
+[1;32m    239[0m [43m    [49m[43mtimeout[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mtimeout[49m[43m,[49m
+[1;32m    240[0m [43m[49m[43m)[49m
+[1;32m    241[0m response[38;5;241m.[39mencoding [38;5;241m=[39m [38;5;124m"[39m[38;5;124mutf-8[39m[38;5;124m"[39m
+[1;32m    242[0m [38;5;28;01mif[39;00m response[38;5;241m.[39mstatus_code [38;5;241m!=[39m [38;5;241m200[39m:
+
+File [0;32m~/.local/lib/python3.10/site-packages/requests/api.py:115[0m, in [0;36mpost[0;34m(url, data, json, **kwargs)[0m
+[1;32m    103[0m [38;5;28;01mdef[39;00m [38;5;21mpost[39m(url, data[38;5;241m=[39m[38;5;28;01mNone[39;00m, json[38;5;241m=[39m[38;5;28;01mNone[39;00m, [38;5;241m*[39m[38;5;241m*[39mkwargs):
+[1;32m    104[0m [38;5;250m    [39m[38;5;124mr[39m[38;5;124;03m"""Sends a POST request.[39;00m
+[1;32m    105[0m 
+[1;32m    106[0m [38;5;124;03m    :param url: URL for the new :class:`Request` object.[39;00m
+[0;32m   (...)[0m
+[1;32m    112[0m [38;5;124;03m    :rtype: requests.Response[39;00m
+[1;32m    113[0m [38;5;124;03m    """[39;00m
+[0;32m--> 115[0m     [38;5;28;01mreturn[39;00m [43mrequest[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mpost[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[43murl[49m[43m,[49m[43m [49m[43mdata[49m[38;5;241;43m=[39;49m[43mdata[49m[43m,[49m[43m [49m[43mjson[49m[38;5;241;43m=[39;49m[43mjson[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m~/.local/lib/python3.10/site-packages/requests/api.py:59[0m, in [0;36mrequest[0;34m(method, url, **kwargs)[0m
+[1;32m     55[0m [38;5;66;03m# By using the 'with' statement we are sure the session is closed, thus we[39;00m
+[1;32m     56[0m [38;5;66;03m# avoid leaving sockets open which can trigger a ResourceWarning in some[39;00m
+[1;32m     57[0m [38;5;66;03m# cases, and look like a memory leak in others.[39;00m
+[1;32m     58[0m [38;5;28;01mwith[39;00m sessions[38;5;241m.[39mSession() [38;5;28;01mas[39;00m session:
+[0;32m---> 59[0m     [38;5;28;01mreturn[39;00m [43msession[49m[38;5;241;43m.[39;49m[43mrequest[49m[43m([49m[43mmethod[49m[38;5;241;43m=[39;49m[43mmethod[49m[43m,[49m[43m [49m[43murl[49m[38;5;241;43m=[39;49m[43murl[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m~/.local/lib/python3.10/site-packages/requests/sessions.py:589[0m, in [0;36mSession.request[0;34m(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)[0m
+[1;32m    584[0m send_kwargs [38;5;241m=[39m {
+[1;32m    585[0m     [38;5;124m"[39m[38;5;124mtimeout[39m[38;5;124m"[39m: timeout,
+[1;32m    586[0m     [38;5;124m"[39m[38;5;124mallow_redirects[39m[38;5;124m"[39m: allow_redirects,
+[1;32m    587[0m }
+[1;32m    588[0m send_kwargs[38;5;241m.[39mupdate(settings)
+[0;32m--> 589[0m resp [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43msend[49m[43m([49m[43mprep[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43msend_kwargs[49m[43m)[49m
+[1;32m    591[0m [38;5;28;01mreturn[39;00m resp
+
+File [0;32m~/.local/lib/python3.10/site-packages/requests/sessions.py:703[0m, in [0;36mSession.send[0;34m(self, request, **kwargs)[0m
+[1;32m    700[0m start [38;5;241m=[39m preferred_clock()
+[1;32m    702[0m [38;5;66;03m# Send the request[39;00m
+[0;32m--> 703[0m r [38;5;241m=[39m [43madapter[49m[38;5;241;43m.[39;49m[43msend[49m[43m([49m[43mrequest[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m    705[0m [38;5;66;03m# Total elapsed time of the request (approximately)[39;00m
+[1;32m    706[0m elapsed [38;5;241m=[39m preferred_clock() [38;5;241m-[39m start
+
+File [0;32m~/.local/lib/python3.10/site-packages/requests/adapters.py:486[0m, in [0;36mHTTPAdapter.send[0;34m(self, request, stream, timeout, verify, cert, proxies)[0m
+[1;32m    483[0m     timeout [38;5;241m=[39m TimeoutSauce(connect[38;5;241m=[39mtimeout, read[38;5;241m=[39mtimeout)
+[1;32m    485[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 486[0m     resp [38;5;241m=[39m [43mconn[49m[38;5;241;43m.[39;49m[43murlopen[49m[43m([49m
+[1;32m    487[0m [43m        [49m[43mmethod[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mmethod[49m[43m,[49m
+[1;32m    488[0m [43m        [49m[43murl[49m[38;5;241;43m=[39;49m[43murl[49m[43m,[49m
+[1;32m    489[0m [43m        [49m[43mbody[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mbody[49m[43m,[49m
+[1;32m    490[0m [43m        [49m[43mheaders[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mheaders[49m[43m,[49m
+[1;32m    491[0m [43m        [49m[43mredirect[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[1;32m    492[0m [43m        [49m[43massert_same_host[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[1;32m    493[0m [43m        [49m[43mpreload_content[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[1;32m    494[0m [43m        [49m[43mdecode_content[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[1;32m    495[0m [43m        [49m[43mretries[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mmax_retries[49m[43m,[49m
+[1;32m    496[0m [43m        [49m[43mtimeout[49m[38;5;241;43m=[39;49m[43mtimeout[49m[43m,[49m
+[1;32m    497[0m [43m        [49m[43mchunked[49m[38;5;241;43m=[39;49m[43mchunked[49m[43m,[49m
+[1;32m    498[0m [43m    [49m[43m)[49m
+[1;32m    500[0m [38;5;28;01mexcept[39;00m (ProtocolError, [38;5;167;01mOSError[39;00m) [38;5;28;01mas[39;00m err:
+[1;32m    501[0m     [38;5;28;01mraise[39;00m [38;5;167;01mConnectionError[39;00m(err, request[38;5;241m=[39mrequest)
+
+File [0;32m~/.local/lib/python3.10/site-packages/urllib3/connectionpool.py:793[0m, in [0;36mHTTPConnectionPool.urlopen[0;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)[0m
+[1;32m    790[0m response_conn [38;5;241m=[39m conn [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m release_conn [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m
+[1;32m    792[0m [38;5;66;03m# Make the request on the HTTPConnection object[39;00m
+[0;32m--> 793[0m response [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_make_request[49m[43m([49m
+[1;32m    794[0m [43m    [49m[43mconn[49m[43m,[49m
+[1;32m    795[0m [43m    [49m[43mmethod[49m[43m,[49m
+[1;32m    796[0m [43m    [49m[43murl[49m[43m,[49m
+[1;32m    797[0m [43m    [49m[43mtimeout[49m[38;5;241;43m=[39;49m[43mtimeout_obj[49m[43m,[49m
+[1;32m    798[0m [43m    [49m[43mbody[49m[38;5;241;43m=[39;49m[43mbody[49m[43m,[49m
+[1;32m    799[0m [43m    [49m[43mheaders[49m[38;5;241;43m=[39;49m[43mheaders[49m[43m,[49m
+[1;32m    800[0m [43m    [49m[43mchunked[49m[38;5;241;43m=[39;49m[43mchunked[49m[43m,[49m
+[1;32m    801[0m [43m    [49m[43mretries[49m[38;5;241;43m=[39;49m[43mretries[49m[43m,[49m
+[1;32m    802[0m [43m    [49m[43mresponse_conn[49m[38;5;241;43m=[39;49m[43mresponse_conn[49m[43m,[49m
+[1;32m    803[0m [43m    [49m[43mpreload_content[49m[38;5;241;43m=[39;49m[43mpreload_content[49m[43m,[49m
+[1;32m    804[0m [43m    [49m[43mdecode_content[49m[38;5;241;43m=[39;49m[43mdecode_content[49m[43m,[49m
+[1;32m    805[0m [43m    [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mresponse_kw[49m[43m,[49m
+[1;32m    806[0m [43m[49m[43m)[49m
+[1;32m    808[0m [38;5;66;03m# Everything went great![39;00m
+[1;32m    809[0m clean_exit [38;5;241m=[39m [38;5;28;01mTrue[39;00m
+
+File [0;32m~/.local/lib/python3.10/site-packages/urllib3/connectionpool.py:537[0m, in [0;36mHTTPConnectionPool._make_request[0;34m(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)[0m
+[1;32m    535[0m [38;5;66;03m# Receive the response from the server[39;00m
+[1;32m    536[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 537[0m     response [38;5;241m=[39m [43mconn[49m[38;5;241;43m.[39;49m[43mgetresponse[49m[43m([49m[43m)[49m
+[1;32m    538[0m [38;5;28;01mexcept[39;00m (BaseSSLError, [38;5;167;01mOSError[39;00m) [38;5;28;01mas[39;00m e:
+[1;32m    539[0m     [38;5;28mself[39m[38;5;241m.[39m_raise_timeout(err[38;5;241m=[39me, url[38;5;241m=[39murl, timeout_value[38;5;241m=[39mread_timeout)
+
+File [0;32m~/.local/lib/python3.10/site-packages/urllib3/connection.py:466[0m, in [0;36mHTTPConnection.getresponse[0;34m(self)[0m
+[1;32m    463[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mresponse[39;00m [38;5;28;01mimport[39;00m HTTPResponse
+[1;32m    465[0m [38;5;66;03m# Get the response from http.client.HTTPConnection[39;00m
+[0;32m--> 466[0m httplib_response [38;5;241m=[39m [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mgetresponse[49m[43m([49m[43m)[49m
+[1;32m    468[0m [38;5;28;01mtry[39;00m:
+[1;32m    469[0m     assert_header_parsing(httplib_response[38;5;241m.[39mmsg)
+
+File [0;32m/opt/anaconda3/envs/ragllama/lib/python3.10/http/client.py:1375[0m, in [0;36mHTTPConnection.getresponse[0;34m(self)[0m
+[1;32m   1373[0m [38;5;28;01mtry[39;00m:
+[1;32m   1374[0m     [38;5;28;01mtry[39;00m:
+[0;32m-> 1375[0m         [43mresponse[49m[38;5;241;43m.[39;49m[43mbegin[49m[43m([49m[43m)[49m
+[1;32m   1376[0m     [38;5;28;01mexcept[39;00m [38;5;167;01mConnectionError[39;00m:
+[1;32m   1377[0m         [38;5;28mself[39m[38;5;241m.[39mclose()
+
+File [0;32m/opt/anaconda3/envs/ragllama/lib/python3.10/http/client.py:318[0m, in [0;36mHTTPResponse.begin[0;34m(self)[0m
+[1;32m    316[0m [38;5;66;03m# read until we get a non-100 response[39;00m
+[1;32m    317[0m [38;5;28;01mwhile[39;00m [38;5;28;01mTrue[39;00m:
+[0;32m--> 318[0m     version, status, reason [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_read_status[49m[43m([49m[43m)[49m
+[1;32m    319[0m     [38;5;28;01mif[39;00m status [38;5;241m!=[39m CONTINUE:
+[1;32m    320[0m         [38;5;28;01mbreak[39;00m
+
+File [0;32m/opt/anaconda3/envs/ragllama/lib/python3.10/http/client.py:279[0m, in [0;36mHTTPResponse._read_status[0;34m(self)[0m
+[1;32m    278[0m [38;5;28;01mdef[39;00m [38;5;21m_read_status[39m([38;5;28mself[39m):
+[0;32m--> 279[0m     line [38;5;241m=[39m [38;5;28mstr[39m([38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mfp[49m[38;5;241;43m.[39;49m[43mreadline[49m[43m([49m[43m_MAXLINE[49m[43m [49m[38;5;241;43m+[39;49m[43m [49m[38;5;241;43m1[39;49m[43m)[49m, [38;5;124m"[39m[38;5;124miso-8859-1[39m[38;5;124m"[39m)
+[1;32m    280[0m     [38;5;28;01mif[39;00m [38;5;28mlen[39m(line) [38;5;241m>[39m _MAXLINE:
+[1;32m    281[0m         [38;5;28;01mraise[39;00m LineTooLong([38;5;124m"[39m[38;5;124mstatus line[39m[38;5;124m"[39m)
+
+File [0;32m/opt/anaconda3/envs/ragllama/lib/python3.10/socket.py:705[0m, in [0;36mSocketIO.readinto[0;34m(self, b)[0m
+[1;32m    703[0m [38;5;28;01mwhile[39;00m [38;5;28;01mTrue[39;00m:
+[1;32m    704[0m     [38;5;28;01mtry[39;00m:
+[0;32m--> 705[0m         [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_sock[49m[38;5;241;43m.[39;49m[43mrecv_into[49m[43m([49m[43mb[49m[43m)[49m
+[1;32m    706[0m     [38;5;28;01mexcept[39;00m timeout:
+[1;32m    707[0m         [38;5;28mself[39m[38;5;241m.[39m_timeout_occurred [38;5;241m=[39m [38;5;28;01mTrue[39;00m
+
+[0;31mKeyboardInterrupt[0m: 
+
