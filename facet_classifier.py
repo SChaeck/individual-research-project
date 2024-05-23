@@ -23,10 +23,10 @@ with open(food_file, 'a', encoding='utf-8') as food_f, \
         if 'food' in line:
             food_f.write(line)
             food_count += 1
-        if 'drink' in line:
+        if 'beer' in line:
             drink_f.write(line)
             drink_count += 1
-        if 'clothes' in line:
+        if 'clothing' in line:
             clothes_f.write(line)
             clothes_count += 1
 

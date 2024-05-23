@@ -37,7 +37,11 @@ results = {}
 # 각 파일에 대해 처리
 for category, path in file_paths.items():
     sentences = read_file(path)
-    processed_sentences = process_sentences(sentences, category)
+    if category == 'drink':
+        print(category)
+        processed_sentences = process_sentences(sentences, 'beer')
+    else:
+        processed_sentences = process_sentences(sentences, category)
     results[category] = processed_sentences
 
 # 결과를 JSON 파일로 저장
